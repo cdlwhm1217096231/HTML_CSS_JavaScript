@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        // 定义函数
+        // function getAge(){
+        //     var y = new Date().getFullYear();
+        //     return y - this.birth;   // 此时一定要注意，由于使用了this
+        // }
+        function getAge(){
+            var y = new Date().getFullYear();
+            return y - xiaoming.birth;   // 此时一定要注意，由于使用了this
+        }
+
+        var xiaoming = {
+            name: "小明",
+            birth: 1992,
+            age: getAge
+        };
+
+        
+        var count = 0;
+        var oldparseInt = parseInt;  // 原函数
+        window.parseInt = function () {
+            count += 1;
+            return oldparseInt.apply(null, arguments);  // 调用原函数
+        };
+        
+        parseInt("10");
+        parseInt("20");
+        parseInt("30");
+        console.log("count = " + count);
+
+        function add(x, y, f){
+            return f(x) + f(y);
+        }
+        var res = add(-5, 6, Math.abs);
+        // console.log("res = " + res);
+        console.log("res = " + `${res}`);
+        
+        function pow(x){
+            return x * x;
+        }
+
+        var arr = [1, 2, 3, 4, 5, 6];
+        arr[8] = 40;
+        var res = arr.map(pow);
+        console.log(res) 
+
+        var result = arr.map(String);
+        console.log(result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 写表单元素前，先要写表单域！！！ -->
+    <form action="xxx.php" method="GET">
+        <!-- text文本框：用户可以在里面输入任何文本内容 -->
+        用户名: <input type="text" name="username" vaule="请输入用户民" maxlength="6"/><br />
+
+        <!-- password密码框：用户看不见输入的密码 -->
+        密码：<input type="password" name="pwd" /> <br />
+
+        <!-- 单选按钮和复选框可以设置checked属性，当页面打开的时候可以默认选中这个按钮 -->
+        <!-- radio单选按钮：可以实现多选一，单选 -->
+        <!-- name是表单元素的名字，这里性别单选按钮必须有相同的名字name才可以实现多选一 -->
+        性别：男 <input type="radio" name="sex" value="男" /> 女 <input type="radio" name="sex" value="女" checked="checked" /> <br />
+
+        <!-- checkbox复选框：可以实现多选 -->
+        爱好：吃饭 <input type="checkbox" name="hobby" value="吃饭" /> 睡觉 <input type="checkbox" name="hobby" value="睡觉" /> 打游戏 <input type="checkbox" checked="checked" name="hobby" value="打游戏" /> <br />
+
+        <!-- 点击了提交按钮，可以把表单域form里面的表单元素里面的值提交给后台服务器 -->
+        <input type="submit" value="免费注册">
+
+        <!-- 重置按钮可以还原初始表单元素初始的默认状态 -->
+        <input type="reset" value="重置密码">
+
+        <!-- 普通按钮button 后期结合JS搭配使用 -->
+        <input type="button" value="获取短信验证码" /><br />
+
+        <!-- 文件域 使用场景：上传文件使用的 -->
+        上传头像：<input type="file" /><br />
+
+        <!-- label标签 -->
+        <label for="text">用户名：</label> 
+        <input type="text" id="text" />
+
+        <label for="nan">男</label>
+        <input type="radio" name="sex" id="nan" />
+
+        <label for="nv">女</label>
+        <input type="radio" name="sex" id="nv" /> 
+
+
+    </form>
+</body>
+</html>

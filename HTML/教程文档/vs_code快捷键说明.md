@@ -1,0 +1,12 @@
+- 1.安装相关插件 open in browser和view in browser
+- 2.使用编辑器
+    - 文件->首选项->设置(大小、是否换行 wordwrap)
+    - shift+end:从头选中一行
+    - shift+home:从尾部选中一行
+    - shift + alt + 向下箭头：快速复制一行
+    - alt + 上或下箭头：快速移动一行
+    - tab：向后缩进
+    - tab + shift：向前缩进
+    - shift + alt + f：代码格式检查
+    - alt + 鼠标左键：多光标
+    - ctrl + d：选择相同元素的下一个
