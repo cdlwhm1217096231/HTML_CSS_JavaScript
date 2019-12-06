@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字体属性之复合属性</title>
+    <style>
+        /* 想要div文字变倾斜 加粗 字号设置为16px 微软雅黑 */
+        /* div{
+            font-style: italic;
+            font-weight: 700;
+            font-size: 16px;
+            font-family: "Microsoft YaHei";
+        } */
+        /* 复合属性：简写方式，不要颠倒顺序 */
+        /* font: font-style font-weight font-size/line-height  font-family;*/
+        div {
+            /* font: italic 700 16px/20px "Microsoft YaHei"; */
+            font: 20px "Microsoft YaHei";
+        }
+    </style>
+</head>
+<body>
+    <div>三生三世十里桃花 一心一意百行代码</div>
+</body>
+</html>
