@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>复合选择器之伪类选择器</title>
+    <style>
+        /* 未访问过的链接 a:link 把没有点击过的链接选出来 */
+
+        a:link {
+            color: #333333;
+            text-decoration: none;
+        }
+
+        /* 已访问过的链接 a:visited 选择点击过的链接 */
+
+        a:visited {
+            color: yellow;
+        }
+
+        /* a:hover 选择鼠标经过的那个链接 */
+
+        a:hover {
+            color: red;
+        }
+
+        /* a:active 选择鼠标正在按下还没有弹起鼠标的那个链接 */
+
+        a:active {
+            color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">小猪佩奇</a>
+    <a href="http://www.baicdcdcdcdu.com">百度一下</a>
+</body>
+
+</html>
