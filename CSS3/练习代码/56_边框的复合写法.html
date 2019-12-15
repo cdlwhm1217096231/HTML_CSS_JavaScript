@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>边框的复合写法</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            /* border-width: 5px;
+            border-style: solid;
+            background-color: #fff; */
+            /* 边框的复合写法 */
+            /* border: 5px solid pink; */
+            /* 上边框 */
+            border-top: 5px solid pink;
+            /* 下边框 */
+            border-bottom: 10px dashed purple;
+            /* 练习：给一个200*200的盒子设置上边框为红色，其余边框为蓝色 */
+            /* border-top: 1px solid red;
+            border-bottom: 1px solid blue;
+            border-left: 1px solid blue;
+            border-right: 1px solid blue; */
+            /* border包含了四条边 */
+            border: 1px solid blue;
+            /* 层叠性 只层叠了上边框 */
+            border-top: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

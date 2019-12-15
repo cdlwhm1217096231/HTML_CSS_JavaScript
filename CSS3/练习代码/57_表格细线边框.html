@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表格细线边框</title>
+    <style>
+        table {
+            width: 500px;
+            height: 249px;
+
+        }
+
+        th {
+            height: 35px;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid pink;
+            /* 合并相邻的边框 */
+            border-collapse: collapse;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table align="center" cellspacing="0">
+        <tr>
+            <th>排名</th>
+            <th>关键词</th>
+            <th>趋势</th>
+            <th>今日搜索</th>
+            <th>最近七日</th>
+            <th>相关链接</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>鬼吹灯</td>
+            <td>
+                <img src="images/down.jpg">
+            </td>
+            <td>345</td>
+            <td>123</td>
+            <td>
+                <a href="#">贴吧</a>
+                <a href="#">图片</a>
+                <a href="#">百科</a>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>盗墓笔记</td>
+            <td>
+                <img src="images/up.jpg">
+            </td>
+            <td>124</td>
+            <td>6749334</td>
+            <td>
+                <a href="#">贴吧</a>
+                <a href="#">图片</a>
+                <a href="#">百科</a>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>西游记</td>
+            <td>
+                <img src="images/down.jpg">
+            </td>
+            <td>45</td>
+            <td>76123</td>
+            <td>
+                <a href="#">贴吧</a>
+                <a href="#">图片</a>
+                <a href="#">百科</a>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
