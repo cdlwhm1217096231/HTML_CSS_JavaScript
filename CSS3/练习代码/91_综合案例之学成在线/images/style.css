@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* 1.确定版心*/
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+body {
+    color: #f3f5f7;
+}
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+.header {
+    height: 42px;
+    /* background-color: pink; */
+    /* 注意，此地方会层叠w中的margin */
+    margin: 30px auto;
+}
+
+/* 2.logo区域 */
+.logo {
+    float: left;
+    width: 198px;
+    height: 42px;
+    
+}
+/* 3.nav区域 */
+.nav {
+    float: left;
+    margin-left: 60px;
+}
+/* 导航栏一行显示 */
+.nav ul li {
+    float: left;
+    margin: 0 15px;
+}
+
+.nav ul li a {
+    display: block;
+    height: 42px;
+    padding: 0 10px;
+    line-height: 42px;
+    font-size: 18px;
+    color: #050505;
+}
+
+.nav ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+    color: #00a4ff;
+}
+/* 搜索模块 */
+.search {
+    float: left;
+    width: 412px;
+    height: 42px;
+    /* background-color:skyblue; */
+    margin-left: 70px;
+}
+
+/* 因为input和button都属于行内块元素，因此两者之间会有缝隙，需要对两者都增加浮动！ */
+.search input {
+    float: left;
+    width: 345px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: 0;
+    color: #bfbfbf;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+.search button {
+    float: left;
+    width: 50px;
+    height: 42px;
+    background-color: blue;
+    /* 按钮button默认有个边框，需要我们手动去掉 */
+    border: 0;
+    /* 添加搜索按钮中的背景图片 */
+    background: url(btn.png);
+}
+
+/* 用户模块 */
+/* 注意：图片和文字同时实现垂直居中，此处没有实现！！！ */
+.user {
+    float: right;
+    line-height: 42px;
+    margin-right: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* banner区域 */
+.banner {
+    height: 421px;
+    background-color: #1c036c;
+}
+
+.banner .w {
+    height: 421px;
+    background: url(banner2.png) no-repeat top center;
+}
+
+/* subnav左侧导航栏 */
+.subnav {
+    float: left;
+    width: 190px;
+    height: 421px;
+    background: rgba(0, 0, 0, .3);
+}
+
+.subnav ul li {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 20px;
+}
+
+.subnav ul li a {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* 加箭头> */
+.subnav ul li a span {
+    float: right;
+}
+
+.subnav ul li a:hover {
+    color: #00a4ff;
+}
+
+/* course模块 */
+
+.course {
+    float: right;
+    width: 230px;
+    height: 300px;
+    background-color: #fff;
+    /* 浮动的盒子不会有外边距合并的问题！ */
+    margin-top: 50px;
+}
+
+/* course中的h2部分 */
+.course h2 {
+    height: 48px;
+    background-color: #9bceea;
+    text-align: center;
+    line-height: 48px;
+    font-size: 18px;
+    color: #fff;
+}
+/* course中的bd部分 */
+.bd {
+    padding: 0 20px;
+}
+
+.bd ul li {
+    padding: 14px 0;
+    border-bottom: 1px solid #ccc;
+}
+.bd ul li h4 {
+    font-size: 16px;
+    color: #4e4e4e;
+}
+
+.bd ul li p {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.bd .more {
+    display: block;
+    height: 38px;
+    border: 1px solid #00a4ff;
+    text-align: center;
+    line-height: 38px;
+    color: #00a4ff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+/* 精品推荐模块goods */
+.goods {
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0 2px 3px 3px rgba(0, 0, 0, .1);
+    margin-top: 10px;
+    /* 行高会继承给下面的三个孩子 */
+    line-height: 60px;
+}
+
+.goods h3 {
+    float: left;
+    margin-left: 30px;
+    color: #00a4ff;
+    font-size: 16px;
+}
+
+.goods ul {
+    float: left;
+    margin-left: 30px;
+}
+
+.goods ul li {
+    float: left;
+
+}
+
+.goods ul li a {
+    padding: 0 30px;
+    font-size: 15px;
+    color: #050505;
+    border-left: 1px solid #ccc;
+}
+.mod {
+    float: right;
+    margin-right: 30px;
+    color: #00a4ff;
+    font-size: 14px;
+}
+
+.box {
+    margin-top: 30px;
+}
+
+.box-hd {
+    height: 45px;
+}
+
+.box-hd h3 {
+    float: left;
+    font-size: 20;
+    color: #494949;
+}
+
+.box-hd a {
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+/* 把li的父亲ul修改的足够宽，就能装下5个盒子，就不会换行了 243(228+15)*5=1225*/  
+.box-bd ul {
+    width: 1225px;
+
+}
+
+.box-bd ul li {
+    float: left;
+    width: 228px;
+    height: 270px;
+    background-color: #fff;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+/* 将li中的图片宽度设置与父元素li一样宽 */
+.box-bd ul li img {
+    width: 100%;
+}
+
+.box-bd ul li h4 {
+    margin: 20px 20px 20px 25px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #050505;
+
+}
+
+.box-bd .info {
+    margin: 0 20px 0 25px;
+    font-size: 12px;
+    color: #999;
+}
+
+.box-bd .info span {
+    color: #ff7c2d;
+} 
+
+.footer {
+    height: 415px;
+    background-color: #fff;
+}
+
+.footer .w {
+    /* 此处不使用margin-top是因为有外边距合并的问题出现 */
+    padding-top: 35px;
+}
+
+.copyright {
+    float: left;
+
+}
+
+.copyright p {
+    font-size: 12px;
+    color:#666;
+    margin: 20px 0 15px 0;
+}
+
+.copyright .app {
+    display: block;
+    width: 118px;
+    height: 33px;
+    border: 1px solid #00a4ff;
+    text-align: center;
+    line-height: 33px;
+    font-size: 16px;
+    color: #00a4ff;
+}
+
+.links {
+    float: right;
+}
+
+.links dl {
+    float: left;
+    margin-left: 100px;
+}
+
+.links dl dt {
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.links dl dd a{
+   
+    font-size: 12px;
+    color: #333333;
+}
