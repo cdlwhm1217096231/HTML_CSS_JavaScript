@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>综合案例之淘宝轮播图布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .tb-promo {
+            /* 子绝父相 */
+            position: relative;
+            width: 520px;
+            height: 280px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+
+        .tb-promo img {
+            width: 520px;
+            height: 280px;
+        }
+
+        /* 并集选择器可以集体声明相同的样式 */
+
+        .prev,
+        .next {
+            position: absolute;
+            /* 让绝对定位的盒子垂直居中 */
+            top: 50%;
+            margin-top: -15px;
+            width: 20px;
+            height: 30px;
+            background: rgba(0, 0, 0, .3);
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* 左侧按钮 */
+
+        .prev {
+            /* 加了绝对定位的盒子，可以直接设置宽度和高度 */
+            /* position: absolute; */
+            left: 0;
+            /* 让绝对定位的盒子垂直居中 */
+            /* top: 50%; */
+            /* margin-top: -15px; */
+            /* width: 20px; */
+            /* height: 30px; */
+            /* background: rgba(0, 0, 0, .3); */
+            /* text-align: center; */
+            /* line-height: 30px; */
+            /* color: #fff; */
+            /* text-decoration: none; */
+            /* 圆角边框 */
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        /* 右侧按钮 */
+
+        .next {
+            /* 加了绝对定位的盒子，可以直接设置宽度和高度 */
+            /* position: absolute; */
+            /* 如果一个盒子既有left属性也有right属性，则默认会执行left属性。同理，top和bottom属性同时存在，会执行top属性！！！*/
+            right: 0;
+            /* 让绝对定位的盒子垂直居中 */
+            /* top: 50%;
+            margin-top: -15px;
+            width: 20px;
+            height: 30px;
+            background: rgba(0, 0, 0, .3);
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            text-decoration: none; */
+            /* 圆角边框 */
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+
+        .promo-nav {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            margin-left: -35px;
+            background: rgba(255, 255, 255, .3);
+            width: 70px;
+            height: 13px;
+            border-radius: 7px;
+        }
+
+        .promo-nav li {
+            float: left;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: 3px;
+        }
+
+        /* 不要忘记选择器权重的问题 */
+
+        .promo-nav .selected {
+            background-color: #ff5000;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="tb-promo">
+        <img src="./images/tb.jpg">
+        <!-- 左侧按钮 -->
+        <a href="#" class="prev">&lt;</a>
+        <!-- 右侧按钮 -->
+        <a href="#" class="next">&gt;</a>
+        <!-- 小圆点模块 -->
+        <ul class="promo-nav">
+            <li class="selected"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+</html>
