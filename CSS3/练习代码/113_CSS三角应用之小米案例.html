@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS三角应用之小米案例</title>
+    <style>
+        .xiaomi {
+            position: relative;
+            width: 249px;
+            height: 100px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+
+        .xiaomi span {
+            position: absolute;
+            left: 249px;
+            top: 50px;
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-left-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="xiaomi">
+        <span></span>
+    </div>
+</body>
+
+</html>
