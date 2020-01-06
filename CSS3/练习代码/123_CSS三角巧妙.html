@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS三角巧妙</title>
+    <style>
+        .box1 {
+            width: 0;
+            height: 0;
+            /* 2.把上边框宽度调大 */
+            /* border-top: 100px solid transparent;
+            border-right: 50px solid skyblue; */
+            /* 1.左边和下边的边框宽度设置为0 */
+            /* border-bottom: 0px solid blue;
+            border-left: 0px solid green; */
+            /* 简化后的代码 */
+            /* 1.只保留右边的边框有颜色 */
+            border-color: transparent red transparent transparent;
+            /* 2.样式都是solid */
+            border-style: solid;
+            /* 3.上边框要大，右边框要稍小，其余边框应该为0 */
+            border-width: 100px 50px 0 0;
+        }
+
+        .price {
+            width: 165px;
+            height: 24px;
+            line-height: 24px;
+            border: 1px solid red;
+            margin: 0 auto;
+        }
+
+        .miaosha {
+            position: relative;
+            float: left;
+            width: 90px;
+            height: 100%;
+            background-color: red;
+            text-align: center;
+            color: #fff;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .miaosha i {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-color: transparent #fff transparent transparent;
+            border-style: solid;
+            border-width: 24px 10px 0 0;
+        }
+
+        .origin {
+            font-size: 12px;
+            color: gray;
+            /* 删除线 */
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="price">
+        <span class="miaosha">¥1650.00
+            <i></i>
+        </span>
+        <span class="origin">¥5650.00</span>
+    </div>
+</body>
+
+</html>

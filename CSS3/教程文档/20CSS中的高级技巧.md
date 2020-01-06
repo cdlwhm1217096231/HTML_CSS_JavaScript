@@ -160,3 +160,140 @@
     -webkit-box-orient: vertical;
     ```
 - **更推荐让后端人员做这个效果，因为后端人员可以设置显示多少个字，操作更简单**。
+#### 7.常见的布局技巧
+- margin负值的运用
+- 文字围绕浮动元素
+- 行内块的巧妙运用
+- CSS三角形
+##### 7.1 margin负值的应用
+![margin负值的应用.png](https://upload-images.jianshu.io/upload_images/13407176-ecee122f0495b84f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+```
+<style>
+    ul li {
+        list-style: none;
+        float: left;
+        width: 150px;
+        height: 200px;
+        border: 1px solid red;
+        /* 重点在此处！ */
+        margin-left: -1px;
+    }
+</style>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+```
+![原理.png](https://upload-images.jianshu.io/upload_images/13407176-6af698be3e1a1871.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+- 鼠标移动到某个盒子上时，盒子边框的颜色发生变化，如下图所示：
+    - a.让每个盒子margin往左侧移动-1px，正好压住相邻盒子边框。
+    - b.**鼠标经过某个盒子的时候，提高当前盒子的层级即可(如果没有定位，则加相对定位[保留位置，不脱标]；如果有定位，则加z-index)**!
+![margin负值的应用2.png](https://upload-images.jianshu.io/upload_images/13407176-26290f8d38245037.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+##### 7.2 文字围绕浮动元素
+![文字围绕浮动元素的应用.png](https://upload-images.jianshu.io/upload_images/13407176-49094777c40b89eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+- 先将文字放入大盒子中，然后再将一张图片放入一个左侧的小盒子中并添加浮动。
+
+![文字围绕浮动元素的原理.png](https://upload-images.jianshu.io/upload_images/13407176-1b7fb59f489db414.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+##### 7.3 行内块巧妙运用
+![行内块技巧应用.png](https://upload-images.jianshu.io/upload_images/13407176-06754a51124bbf4f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+#### 7.4 CSS三角巧妙运用
+![CSS三角巧妙应用.png](https://upload-images.jianshu.io/upload_images/13407176-56cd3ea37f78e765.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+- 具体代码如下：
+    ```
+    width: 0;
+    height: 0;
+    /* 1.只保留右边的边框有颜色 */
+    border-color: transparent red transparent transparent;
+    /* 2.样式都是solid */
+    border-style: solid;
+    /* 3.上边框要大，右边框要稍小，其余边框应该为0 */
+    border-width: 22px 8px 0 0;
+    ```
+![CSS三角原理.png](https://upload-images.jianshu.io/upload_images/13407176-9c797b7a70f1af8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+#### 8.CSS初始化
+- 不同浏览器对有些标签的默认值是不同的，为了消除不同浏览器对HTML文本呈现的差异，照顾浏览器的兼容，我们需要对CSS初始化。
+- 简单理解：**CSS初始化是指重设浏览器的样式。(也称为CSS reset)**。
+- 每个网页都必须首先进行CSS初始化。
+- 京东商城的CSS初始化代码如下：
+    ```
+    /* 把所有标签的内外边距都清零 */
+    * {
+        margin: 0;
+        padding: 0
+    }
+    
+    /* em和i斜体的文字不倾斜 */
+    em,
+    i {
+        font-style: normal
+    }
+    
+    /* 去掉li的小圆点 */
+    li {
+        list-style: none
+    }
+    
+    img {
+        /* border 0 照顾低版本浏览器，如果图片外面包含了链接会有边框的问题 */
+        border: 0;
+        /* 取消图片底侧有空白缝隙的问题 */
+        vertical-align: middle
+    }
+    
+    button {
+        /* 当鼠标经过button,鼠标变成小手 */
+        cursor: pointer
+    }
+    
+    a {
+        color: #666;
+        text-decoration: none
+    }
+    
+    a:hover {
+        color: #c81623
+    }
+    
+    button,
+    input {
+     /* \5B8B\4F53表示宋体，浏览器的兼容性比较好 */
+        font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif
+    }
+    
+    body {
+        /* CSS3特性：抗锯齿性，让文字显示的更加清晰 */
+        -webkit-font-smoothing: antialiased;
+        background-color: #fff;
+        font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+        color: #666
+    }
+    
+    .hide,
+    .none {
+        display: none
+    }
+    
+    /* 清除浮动 */
+    .clearfix:after {
+        visibility: hidden;
+        clear: both;
+        display: block;
+        content: ".";
+        height: 0
+    }
+    
+    .clearfix {
+        *zoom: 1
+    }
+    ```
+- **Unicode编码字体**：把中文字体的名字用相应的Unicode编码来代替，这样就可以有效的避免浏览器解释CSS代码时出现乱码的问题。
+- 例如：
+    - 黑体 \9ED1\4F53
+    - 宋体 \5B8B\4F53
+    - 微软雅黑 \5FAE\8F6F\96C5\9ED1
+#### 9.资料下载
+ - [笔记及代码，欢迎star,follow,fork......](https://github.com/cdlwhm1217096231/HTML_CSS_JavaScript)
