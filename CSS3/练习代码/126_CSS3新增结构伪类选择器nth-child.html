@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3新增结构伪类选择器nth-child</title>
+    <style>
+        /* 1.选择ul里面的第一个孩子，小li */
+        ul li:first-child {
+            background-color: pink;
+        }
+
+        /* 2.选择ul里面的最后一个孩子，小li */
+        ul li:last-child {
+            background-color: pink;
+        }
+
+        /* 3.选择ul里面的第2个孩子，小li  重点！！！*/
+        ul li:nth-child(2) {
+            background-color: pink;
+        }
+
+        ul li:nth-child(6) {
+            background-color: pink;
+        }
+
+        /* 4.把所有偶数even的孩子选取出来 */
+        ul li:nth-child(even) {
+            background-color: skyblue;
+        }
+
+        /* 5.把所有奇数odd的孩子选取出来 */
+        ul li:nth-child(odd) {
+            background-color: green;
+        }
+
+        /* 6.nth-child(n) 从0开始 每次加1，往后计算。这里面必须是n，不能是其他的字母，选择了所有的孩子*/
+        /* ol li:nth-child(n) {
+            background-color: pink;
+        } */
+
+        /* 7.nth-child(2n) 选择了所有的偶数孩子，等价于even */
+        /* ol li:nth-child(2n) {
+            background-color: pink;
+        } */
+
+        /* 8.nth-child(2n+1) 选择了所有的奇数孩子，等价于odd */
+        /* ol li:nth-child(2n+1) {
+            background-color: pink;
+        } */
+
+        /* 9.nth-child(n+3) 选择了第三个元素开始的所有元素，包含第三个元素 */
+        /* ol li:nth-child(n+3) {
+            background-color: red;
+        } */
+
+        /* 10.nth-child(-n+3) 选择了前三个元素 */
+        ol li:nth-child(-n+3) {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ul>
+
+    <ol>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ol>
+</body>
+
+</html>
