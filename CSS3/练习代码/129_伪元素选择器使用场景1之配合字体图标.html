@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪元素选择器使用场景1之配合字体图标</title>
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?19rqb1');
+            src: url('fonts/icomoon.eot?19rqb1#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.ttf?19rqb1') format('truetype'),
+                url('fonts/icomoon.woff?19rqb1') format('woff'),
+                url('fonts/icomoon.svg?19rqb1#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+
+        div {
+            position: relative;
+            width: 200px;
+            height: 35px;
+            border: 1px solid red;
+        }
+
+        div::after {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            /* content: ""; */
+            /* 与上一语句效果相同 */
+            content: "\e90f";
+            font-family: 'icomoon';
+            color: blue;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

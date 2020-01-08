@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪元素选择器使用场景3-伪元素清除浮动</title>
+    <style>
+        /* 1.父级添加after伪元素 */
+        .clearfix:after {
+            /* 伪元素必须写的属性 */
+            content: "";
+            /* 插入的元素必须是块级元素 */
+            display: block;
+            /* 不看见这个元素 */
+            height: 0;
+            /* 核心代码清除浮动 */
+            clear: both;
+            /* 不看见这个元素 */
+            visibility: hidden;
+        }
+
+        /* 2.父级添加双伪元素*/
+        .clearfix::before,
+        .clearfix:after {
+            content: "";
+            /* 转换为块级元素，并且一行显示 */
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

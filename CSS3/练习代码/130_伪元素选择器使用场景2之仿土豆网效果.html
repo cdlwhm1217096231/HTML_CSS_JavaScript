@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪元素选择器使用场景2之仿土豆网效果</title>
+    <style>
+        .tudou {
+            /* 子绝父相 */
+            position: relative;
+            width: 440px;
+            height: 320px;
+            background-color: pink;
+            margin: 30px auto;
+        }
+
+        .tudou img {
+            /* 图片要和父盒子tudou一样大 */
+            width: 100%;
+            height: 100%;
+        }
+
+        .tudou::before {
+            content: "";
+            /* 隐藏遮蔽层 */
+            display: none;
+            /* 子元素使用绝对定位 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .4) url(./images/arr1.png) no-repeat center;
+        }
+
+        /* 当鼠标经过土豆这个盒子时，就让它里面的before遮蔽层就显示出来 */
+        /* 下面的语句是重点！！！ */
+        .tudou:hover::before {
+            content: "";
+            /* 显示元素！ */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tudou">
+        <img src="./images/tudou.jpg" alt="">
+    </div>
+    <div class="tudou">
+        <img src="./images/tudou.jpg" alt="">
+    </div>
+    <div class="tudou">
+        <img src="./images/tudou.jpg" alt="">
+    </div>
+    <div class="tudou">
+        <img src="./images/tudou.jpg" alt="">
+    </div>
+</body>
+
+</html>

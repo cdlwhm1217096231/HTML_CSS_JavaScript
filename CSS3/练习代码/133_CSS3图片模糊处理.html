@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3图片模糊处理</title>
+    <style>
+        img {
+            /* blur是一个函数，()中数值越大，越模糊，记得加单位 */
+            filter: blur(5px);
+        }
+
+        img:hover {
+            filter: blur(0);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/ldh.jpg" alt="">
+</body>
+
+</html>
