@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2D旋转综合案例</title>
+    <style>
+        div {
+            float: left;
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            border: 1px solid pink;
+            margin: 10px;
+        }
+
+        div::before {
+            content: '子盒子';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: hotpink;
+            transform: rotate(180deg);
+            transform-origin: left bottom;
+            transition: all .4s;
+        }
+
+        /* 鼠标经过div 里面的before复原位置 */
+        div:hover::before {
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+
+    </div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>
