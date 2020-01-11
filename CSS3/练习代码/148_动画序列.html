@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画序列</title>
+    <style>
+        /* 动画序列 */
+        /* @keyframes move {
+
+            /* from和to等价于0%和100% */
+        /* from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(1000px, 0);
+            }
+        } */
+        /* 1.动画序列可以做多个状态的变化  keyframe 关键帧 */
+        /* 2.里面的百分比一定要是整数*/
+        /* 3.里面的百分比就是 总的时间（本案例中是10s）的划分 25% * 10s = 2.5s*/
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(1000px, 0);
+            }
+
+            50% {
+                transform: translate(1000px, 500px);
+            }
+
+            75% {
+                transform: translate(0, 500px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            animation-name: move;
+            animation-duration: 10s;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
