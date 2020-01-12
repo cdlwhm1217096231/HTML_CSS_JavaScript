@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS中的3D转换之rotate3d旋转</title>
+    <style>
+        body {
+            perspective: 500px;
+        }
+
+        img {
+            display: block;
+            margin: 100px auto;
+            transition: all 1s;
+        }
+
+        /* 左手准则确定旋转方向 */
+        /* img:hover {
+            transform: rotateX(45deg);
+        } */
+        /* img:hover {
+            transform: rotateY(45deg);
+        } */
+        img:hover {
+            /* transform: rotateZ(180deg); */
+            /* transform: rotate3d(x, y, z, deg); */
+            /* transform: rotate3d(1, 0, 0, 45deg); 绕x轴旋转*/
+            /* transform: rotate3d(0, 1, 0, 45deg); 绕y轴旋转*/
+            transform: rotate3d(1, 1, 0, 45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/pig.jpg" alt="">
+</body>
+
+</html>

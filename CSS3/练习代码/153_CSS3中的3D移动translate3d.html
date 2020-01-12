@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css3中的3D移动translate3d</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* transform: translateX(100px); */
+            /* transform: translateX(100px) translateY(100px) translateZ(100px); */
+            /* 1.translateZ 沿着z轴移动 */
+            /* 2.translateZ后面的单位一般根px */
+            /* 3.tranlateZ(100px);  向外移动100px即向我们的眼睛移动100px */
+            /* 4.3D移动有简写的方法: transform: translate3d(x, y, z); */
+            /* transform: translate3d(100px, 100px, 100px); */
+            /* 5. x、y、z是不能省略的，如果没有就写0*/
+            transform: translate3d(0, 0, 100px);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
