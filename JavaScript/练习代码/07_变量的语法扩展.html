@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>变量的语法扩展</title>
+    <script>
+        // 1.更新变量
+        var myName = 'Curry';
+        console.log(myName);
+        myName = "大拿";
+        console.log(myName);
+        // 2.同时声明多个变量
+        var age = 18, 
+        address = '火影村', 
+        salary = 2000;
+        // 3.声明变量的特殊情况
+        // 3.1 只声明不赋值，程序也不知道里面存的是啥，所以结果是undefined，未定义的
+        var sex;
+        console.log(sex);
+        // 3.2 不声明不赋值，直接使用某个变量会报错的！Uncaught ReferenceError: tel is not defined
+        // console.log(tel);
+        // 3.3 不声明直接赋值使用，不提倡该种方式
+        qq = 110;
+        console.log(qq);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
