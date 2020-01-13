@@ -1,0 +1,179 @@
+{
+    "editor.fontSize": 15,
+    "window.zoomLevel": 0,
+    "python.pythonPath": "D:\\Anaconda3\\python.exe",
+    // "terminal.integrated.shell.windows": "D:\\git\\Git\\bin\\bash.exe",
+    // "terminal.intergrated.shellArgs.windows": [
+    //     "-l",
+    //     "-i"
+    // ],
+    "python.linting.flake8Enabled": false,
+    "python.formatting.provider": "yapf",
+    "python.linting.flake8Args": ["--max-line-length=248"],
+    "python.linting.pylintEnabled": false,
+    
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": true
+    },
+
+    // 开启vscode-icons主题
+    "workbench.iconTheme": "vscode-icons",
+    // 个人感觉颜色比较鲜艳的主题
+    "workbench.colorTheme": "One Dark Pro",
+    // 我在这里对自动保存设置了一个延迟
+    "files.autoSave": "afterDelay",
+    "git.confirmSync": false,
+    "editor.formatOnType": true,
+    // 在这里主要做了对vue语言的支持
+    "files.associations": {
+        "*.vue": "vue",
+        "*.js": "javascript",
+        "*.md": "markdown"
+    },
+    // 将一些不必要的搜索范围去掉
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/dist": true,
+        "**/.git": true
+    },
+    // 主要是设置选中范围是尖角还是圆角，没啥必要
+    "editor.roundedSelection": false,
+    // 因为有时后需要查看.git的设置，所以将.git加入显示范围
+    "files.exclude": {
+        "**/.git": false,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true
+    },
+    // 这里主要是设置emmet对于vue的支持
+    "emmet.syntaxProfiles": {
+        "vue": "html",
+        "vue-html": "html",
+    },
+    // 同上
+    "emmet.includeLanguages": {
+        "vue-html": "html",
+        "vue": "html",
+        "javascript": "javascriptreact"
+    },
+    // 我比较喜欢用Enter换行，所以emmet提示设置只用tab选择
+    "emmet.triggerExpansionOnTab": true,
+    // Fira Code是我最喜欢的字体，下面会介绍原因
+    "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    // 将行高设置高一点会显得很高大上且舒服
+    "editor.lineHeight": 24,
+    // 缩进规则，主要看公司要求和个人习惯
+    "[javascript]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    // 因为我没怎么用过打开的编辑器，都是用cmd+p进行跳转。。
+    "explorer.openEditors.visible": 0,
+    // 主要是一些css代码规范的问题，禁用important
+    "css.lint.important": "error",
+    "less.lint.important": "error",
+    "scss.lint.important": "error",
+    // 设置eslint对于vue的支持
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        "vue"
+    ],
+    // 我不是很喜欢小地图。。
+    "editor.minimap.enabled": true,
+    // Fira Code 支持需要开启
+    "editor.fontLigatures": true,
+    "editor.tabSize": 4,
+    // 对于一些比较头痛的地方禁用emmet
+    "emmet.excludeLanguages": [
+        "markdown",
+        "less",
+        "pug"
+    ],
+    // 设置代码换行大小
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "todohighlight.include": [
+        "**/*.js",
+        "**/*.cpp",
+        "**/*.c",
+        "**/*.py",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.html",
+        "**/*.php",
+        "**/*.css",
+        "**/*.scss",
+        "**/*.less",
+        "**/*.vue"
+    ],
+    // 一个给文件加注释头的插件
+    "topper.headerTemplates": [
+        {
+            "defaultCStyled": {
+                "headerBegin": "/**",
+                "headerPrefix": "*",
+                "headerEnd": "*/",
+                "template": [
+                    "${headerBegin}",
+                    "${headerPrefix} ${fileName}",
+                    "${headerPrefix} @author ${author}",
+                    "${headerPrefix} @description ${description}",
+                    "${headerPrefix} @created ${createdDate}",
+                    "${headerPrefix} @copyright ${copyright}",
+                    "${headerPrefix} @last-modified ${lastModifiedDate}",
+                    "${headerEnd}"
+                ]
+            }
+        },
+        {
+            "python": {
+                "headerBegin": "#",
+                "headerPrefix": "#",
+                "headerEnd": "#",
+                "template": [
+                    "${headerBegin}",
+                    "${headerPrefix} ${fileName}",
+                    "${headerPrefix} @author ${author}",
+                    "${headerPrefix} @description ${description}",
+                    "${headerPrefix} @created ${createdDate}",
+                    "${headerPrefix} @last-modified ${lastModifiedDate}",
+                    "${headerEnd}"
+                ]
+            }
+        }
+    ],
+    "topper.customTemplateParameters": [
+        {
+            "personalProfile": {
+                "author": "Curry Coder",
+                "website": "https://github.com/cdlwhm1217096231",
+                "copyright": "None \n None",
+                "license": "None",
+                "email": "1217096231@qq.com"
+            }
+        },
+        {
+            "officeProfile": {
+                "author": "Curry Coder",
+                "department": "student",
+                "email": "1217096231@qq.com"
+            }
+        }
+    ],
+    "git.autofetch": true,
+    "workbench.activityBar.visible": true,
+}
