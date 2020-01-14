@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数据类型转换</title>
+    <script>
+        // 转换为字符串类型
+        // 1.把数字型转换成字符串类型
+        var num = 10;
+        var str_num = num.toString();
+        console.log(typeof str_num);
+        // 2.利用String(变量)
+        console.log(typeof String(num));
+        // 3.利用+拼接字符串实现转换效果  隐式转换
+        console.log(typeof (num + ''));
+
+        // 转换为数字类型
+        // 1.parseInt(变量)可以把字符型的转换为数字型，得到的是整数
+        var age = prompt('请输入你的年龄: ');
+        console.log(typeof(parseInt(age)));
+        console.log(parseInt('3.14'));  // 取整，得到的是3
+        console.log(parseInt('3.94'));  // 取整，得到的是3
+        console.log(parseInt('120px'));  // 120会去掉px等单位
+        console.log(parseInt('curry23px')); // NaN
+        // 2.parseFloat(变量)可以把字符型的转换为数字型，得到的是浮点数
+        console.log(parseFloat('3.14'));  // 3.14
+        console.log(parseFloat('120.45px')); // 120.45
+        console.log(parseFloat('coder0.618px')); // NaN
+        // 3.利用Number(变量)
+        var str = '1234567';
+        console.log(Number(str));
+        console.log(Number('12'));
+        // 4.利用了算术运算 - * / 可以实现隐式转换
+        console.log('12' - 11);  // 1
+        console.log('12' * 10);  // 120
+        console.log('123' - '110'); // 13
+        
+        // 转换为布尔类型
+        console.log(Boolean(''));   // false
+        console.log(Boolean(0));    // false
+        console.log(Boolean(NaN));  // false
+        console.log(Boolean(null));  // false
+        console.log(Boolean(undefined));  // false
+        console.log('----------------------------');
+        console.log(Boolean(123));  // true
+        console.log(Boolean('curry_coder'));  // ture
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

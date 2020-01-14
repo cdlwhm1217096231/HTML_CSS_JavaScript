@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>变量的数据类型</title>
+    <script>
+        // int num = 10;  c++
+        // var num;  这里的num我们是不确定它是属于哪种数据类型的
+        var num = 10;  // num属于数字型
+        // js中的变量数据类型是只有程序在运行过程中，根据等号右边的值来确定的
+        var str = 'pink';  // str是字符串型
+        // js是动态语言，变量的数据类型是可以变化的
+        var x = 10;   // x是数字型
+        var x = 'pink';  // x是字符串型
+
+        var num = 10;  // num 数字型
+        var PI = 3.14;  // PI 数字型
+        // 1. 八进制 0~7 程序中数字前面加0表示八进制
+        var num1 = 010; // 010八进制转换为十进制就是8
+        console.log(num1);  // 十进制表示
+        // 2. 十六进制 0~9 A~F 程序中数字前面加0x表示十六进制
+        var num3 = 0x19;
+        console.log(num3);
+        // 3. 数字型的最大值和最小值
+        console.log(Number.MAX_VALUE);
+        console.log(Number.MIN_VALUE);
+        // 4.无穷大、无穷小、NaN
+        console.log(Number.MAX_VALUE * 2);
+        console.log(-Number.MAX_VALUE * 2);
+        console.log('Curry_Coder' - 100);  // NaN
+        // isNaN()这个方法用来判断非数字，并且返回一个值 如果是数字返回的是false，如果不是数字返回的是true
+        console.log(isNaN(12));  // false
+        console.log(isNaN('Curry_Coder'));  // true
+        // 字符串型：'curry'  "curry"  '12' 'true'
+        var strName = '我是一个"程序员"';
+        console.log(strName);
+        // 字符串中的转义字符，都是以\开头。但是，这些转义字符都要写在引号中
+        console.log('\\');
+        // 检测获取字符串的长度length
+        var str = 'my name is curry_coder';
+        console.log(str.length);  // 22
+        // 字符串的拼接 +  只有有字符串和其他类型想拼接，最终的结果就是字符串
+        console.log('沙漠' + '骆驼' + 666);  // '沙漠骆驼666'
+        console.log('curry' + 18);  // 'curry18'
+        console.log('curry' + true); // 'currytrue'
+        console.log(12 + 12);  // 24
+        console.log('12' + '12'); // '1212'
+        // 字符串加强
+        console.log('curry' + 18 + '岁');
+        var age = 18;
+        console.log('curry' + age + '岁');
+        // 变量和字符串相连的口诀：引引加加
+        console.log('coder' + age + '岁');
+        //  布尔类型boolean
+        var flag = true;
+        var _flag = false;
+        console.log(flag + 1);  // ture参与加法运算当1来看
+        console.log(_flag + 1);  // false参与加法运算当0来看
+        // 如果一个变量声明未赋值就是undefined 未定义类型
+        var str;
+        console.log(str);
+        var variable = undefined;
+        console.log(variable + 'curry');  // 'undefinedcurry'
+        console.log(variable + 1);  // undefined和数字相加，最后的结果是NaN
+        // null（空值）
+        var space = null;
+        console.log(space + 'curry');  // 'nullcurry'
+        console.log(space + 1);  // 1
+        
+        
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
