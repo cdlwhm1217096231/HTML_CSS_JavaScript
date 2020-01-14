@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>比较运算符</title>
+    <script>
+        console.log(3 >= 5);  // false
+        console.log(4 <= 9);  // true
+        // 1.程序中，等于号是==，默认转换数据类型 会把字符串型的数据转换为数字型，只要求值相等就可以！
+        console.log(3 == 5);  //false
+        console.log('curry' == 'nba'); // false
+        console.log(18 == 18); // true
+        console.log(18 == '18');  // true  重点！
+        console.log(18 != 18);  // false
+        // 2.程序中会有全等，一模一样。要求两侧的值并且数据类型完全一致才可以true
+        console.log(18 === 18);  // true
+        console.log(18 === '18'); // false
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

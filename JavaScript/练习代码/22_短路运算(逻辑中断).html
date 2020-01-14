@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>短路运算(逻辑中断)</title>
+    <script>
+        // 1.用布尔值参与的运算true && false == false
+        // 2. 123 && 456是值或者表达式参与逻辑运算？
+        // 3.逻辑与短路运算：如果表达式1结果为真，则返回表达式2；如果表达式1结果为假，那么返回表达式1
+        console.log(123 && 456);  // 456
+        console.log(0 && 456);  // 0
+        console.log(0 && 1 + 2 && 456 * 1234389); // 0
+        console.log('' && 1 + 2 && 456 * 1234389); // ''
+        // 如果有空的或者否定的为假，其余是真的 0 '' null undefined NaN
+        
+        // 4.逻辑或短路运算：如果表达式1结果为真，则返回的是表达是1；如果表达式1结果为假，则返回表达式2
+        console.log(123 || 456);  // 123
+        console.log(123 || 789 || 893 * 34343);  // 123
+        console.log(null || 8034 || 343 * 9934);  // 8043
+        // 逻辑中断很重要，它会影响程序的运算结果!
+        var num = 0;
+        console.log(123 || num++);
+        console.log(num); // 0
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
