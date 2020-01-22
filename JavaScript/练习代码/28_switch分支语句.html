@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>switch分支语句</title>
+    <script>
+        // 语法结构
+        /* switch(表达式) {
+            case value1:
+                // 执行语句1
+                break;
+            case value2:
+                // 执行语句2
+                break;
+            ...
+            default:
+                // 执行最后的语句
+        } */
+        switch (2) {
+            case 1:
+                console.log('1');
+                break;
+            case 2:
+                console.log('2');
+                break;
+            case 3:
+                console.log('3');
+                break;
+            default:
+                console.log('没有匹配结果');
+        }
+        // 查询水果案例
+        var fruit = prompt('请输入你要查询的水果: ');
+        switch (fruit) {
+            case '苹果':
+                alert('苹果的价格是 3.5/斤');
+                break;
+            case '榴莲':
+                alert('榴莲的价格是 35/斤')
+                break;
+            default:
+                alert('没有此水果!');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

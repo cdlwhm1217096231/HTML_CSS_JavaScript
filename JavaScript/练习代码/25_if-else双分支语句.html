@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>if-else双分支语句</title>
+    <script>
+       /*  if (条件表达式) {
+            // 执行语句1
+        } else {
+            // 执行语句2
+        } */
+        var age = prompt('请输入你的年龄: ');
+        if (age >= 18) {
+            alert('我想带你去网吧偷耳机');
+        } else {
+            alert('回家做作业吧');
+        }
+        // if-else双分支语句案例之判断闰年
+        var year = prompt('请你输入要检测的年份: ');
+        // 闰年：能够被4整除但不能被100整除或者能被400整除也为闰年
+        if (year % 4 == 0 && year % 100 !=0 || year % 400 == 0) {
+            alert(year + '年是闰年');
+        } else {
+            alert(year + '年是平年');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

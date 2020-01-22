@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三元表达式</title>
+    <script>
+        // 语法结构
+        // 条件表达式 ? 表达式1 : 表达式2;
+        // 如果条件表达式结果为真，则返回表达式1；如果条件表达式结果为假，则返回表达式2；
+        var num = 10;
+        var res = num > 5 ? '是的' : '不是的'; //表达式是有返回结果的
+        console.log(res);
+        // 数字补0案例
+        var time = prompt('请输入一个0~59之间的数字: ');
+        // 三元表达式
+        var result = time < 10 ? '0' + time : time;
+        alert(result);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

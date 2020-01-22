@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>if-else-if多分支语句</title>
+    <script>
+        // if-else-if语句
+        /* if (条件表达式1) {
+            // 执行语句1;
+        } else if (条件表达式2) {
+            // 执行语句2;
+        } else if (条件表达式3){
+            // 执行语句3;
+        }
+        ...
+        else {
+            // 执行语句4
+        } */
+        // 判断成绩级别案例
+        var score = prompt('请输入你的分数: ');
+        console.log(typeof (score));
+        
+        var int_score = parseFloat(score);
+        if (int_score >= 90) {
+            alert('A');
+        } else if (int_score >= 80) {
+            alert('B');
+        } else if (int_score >= 70) {
+            alert('C');
+        }
+        else if (int_score >= 60) {
+            alert('D');
+        }
+        else {
+            alert('E');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
