@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for循环重复执行不相同的代码</title>
+    <script>
+        // for循环重复执行不相同的代码，，主要是因为计数器i,计数器i在每次循环过程中值都会发生改变
+        // for (var i = 1; i <= 100; i++) {
+        //     console.log('这个人今年' + i + '岁了');
+
+        // }
+        for (var i = 1; i <= 100; i++) {
+            if (i === 1) {
+                console.log('这个人今年1岁了，他出生了');
+
+            } else if (i === 100) {
+                console.log('这个人100岁了，他died了');
+
+            } else {
+                console.log('这个人今年' + i + '岁了');
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

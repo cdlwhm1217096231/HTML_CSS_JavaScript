@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>continue和break关键字</title>
+    <script>
+        // continue关键字:退出本次(当前次的循环)，继续执行剩余次数的循环
+        for (var i = 1; i <= 5; i++) {
+            if (i === 3) {
+                continue;  // 只要遇见continue就会退出本次循环，直接跳到i++
+            }
+            console.log('我正在吃第' + i + '个包子');
+        }
+
+        // 求1到100之间，除了能被7整除之外的整数和
+        var s = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 7 === 0) {
+                continue;
+            }
+            s += i;
+        }
+        console.log('1到100之间，除了能被7整除之外的整数和是: ' + s);
+        
+        // break关键字：退出整个循环
+        for (var i = 1; i <= 5; i++) {
+            if (i === 3) {
+                break;
+            }
+            console.log('我正在吃第' + i + '包子');
+            
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

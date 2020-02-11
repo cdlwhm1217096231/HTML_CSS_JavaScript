@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>do-while循环</title>
+    <script>
+        var i = 1, j = 1, sum = 0;
+        do {
+            console.log('我今年' + i + '岁了.');
+            i++;
+        }while(i <= 100)
+
+        do {
+            sum += j;
+            j++;
+        }while(j <= 100)
+        console.log('1到100的和是' + sum);
+        
+        do {
+            var msg = prompt('你爱我吗?');
+        }while(msg !== '我爱你')
+        alert('我也爱你啊');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

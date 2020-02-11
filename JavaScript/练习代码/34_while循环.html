@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while循环</title>
+    <script>
+        // 打印一个人的一生
+        var i = 1;
+        while (i <= 100) {
+            console.log('这个人今年' + i + '岁了!');
+            i++;
+        }
+        // 求1到100的整数和
+        var j = 1,
+            sum = 0;
+        while (j <= 100) {
+            sum += j;
+            j++;
+        }
+        console.log('1到100之间的整数和是' + sum);
+
+        // 
+        var msg = prompt('你爱我吗?');
+        while (msg !== '我爱你') {
+            msg = prompt('你爱我吗?');
+            
+        }
+        alert('我也爱你啊');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

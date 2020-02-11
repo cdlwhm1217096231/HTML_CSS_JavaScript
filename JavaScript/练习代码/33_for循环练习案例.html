@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for循环练习案例</title>
+    <script>
+        var res = 0, eval = 0, odd = 0, three_sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            res += i;
+            if(i % 2 == 0) {
+                eval += i;
+            }else {
+                odd += i;
+            }
+
+            if(i % 3 == 0) {
+                three_sum += i;
+            }
+        }
+        console.log('1到100内所有的偶数和: ' + eval);
+        console.log('1到100内所有的奇数和: ' + odd);
+        console.log('1到100内所有的能被3整除的数字和: ' + three_sum);
+        
+        var mean_value = res / (i-1);
+        console.log('1到100的平均值: ' + mean_value);
+        
+
+        // 求学生成绩案例
+        var grade_nums = prompt('请输入班级的总人数: ');
+        var sum = 0;
+        var avg = 0;
+
+        for (var i = 1; i <= grade_nums; i++) {
+            var score = prompt('请你输入第' + i + '个学生的成绩');
+            // 因为从prompt接收的键盘输入是字符串型的，因此需要parseFloat转换为数字型
+            sum += parseFloat(score);
+        }
+        avg = sum / grade_nums;
+       alert('班级总成绩是: ' + sum);
+       alert('班级平均分是: ' + avg);
+        
+        // 一行打印5个星星
+        var str = '';
+        for (var i = 1; i <= 5; i++) {
+            str += '☆';
+        }
+        console.log(str);
+        // 打印5行5列的星星
+        var str = '';
+        for (var row = 1; row <= 5; row++) {
+            for (var col = 1; col <= 5; col++){
+                str += '☆';
+            }
+            str += '\n';
+        }
+        console.log(str);
+        
+        // 打印n行n列的星星
+        var rows = prompt('请你输入行数: ');
+        rows = parseInt(rows);
+        var cols = prompt('请你输入列数: ');
+        cols = parseInt(cols);
+
+        var str = '';
+        for (var row = 1; row <= rows; row++) {
+            for (var col = 1; col <= cols; col++){
+                str += '☆';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        // 打印倒三角
+        var str = '';
+        for (var i = 1; i <= 10; i++) {
+            for (var j = i; j <= 10; j++) {
+                str += '☆';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        // 打印上三角
+        var str = '';
+        for (var i = 10; i >= 1; i--) {
+            for (var j = i; j <= 10; j++) {
+                str += '☆';
+            }
+            str += '\n';
+        }
+        console.log(str);
+        
+        // 打印九九乘法表
+        // 核心算法：每一行中，公式的个数恰好等于行数，因此j <= i
+        var str = '';
+        for (var i = 1; i <= 9; i++) {   // 外层循环控制行数
+            for (var j = 1; j <= i; j++) {  // 里层循环控制每一行的个数
+                str += j + '×' + i + '=' + i * j + '\t';
+            }
+            str += '\n';
+        }
+        console.log(str);
+        
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>
