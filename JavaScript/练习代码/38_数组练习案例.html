@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组练习案例</title>
+</head>
+<script>
+    // 1.删除数组中的重复元素
+    var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+    var res = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] != 0) {
+            res[res.length] = arr[i];
+        }
+    }
+    console.log(res);
+    // 2.翻转数组
+    var arr = ['red', 'green', 'blue', 'pink', 'purple'];
+    var res = [];
+    for (var j = arr.length - 1; j >= 0; j--) {
+        res[res.length] = arr[j];
+    }
+    console.log(res);
+    // 3.数组排序（冒泡排序）
+    // 交换两个变量
+    var temp, num1 = 10, num2 = 100;
+    temp = num1;
+    num1 = num2;
+    num2 = temp;
+    console.log(num1, num2);
+    var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+    console.log('原始数组：' + arr);
+    
+    for (var i = 0; i < arr.length; i++) {  // 外层循环控制趟数
+        for (var j = i + 1; j < arr.length; j++) {  // 里层循环控制每趟的交换次数
+            if (arr[i] >= arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    console.log('冒泡排序后的结果：' + arr);
+    
+</script>
+<body>
+    
+</body>
+</html>

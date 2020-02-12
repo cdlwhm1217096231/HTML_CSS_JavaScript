@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组的使用</title>
+    <script>
+        // 1.利用new创建数组
+        var names = new Array();  // 创建了一个空的数组
+        // 2.利用字面量值创建数组[]
+        var arr = [];  // 创建了一个空的数组
+        var array = ['1', 2, 'dana', true];
+        console.log(array);
+        console.log(array[2]);
+        var arr2 = ['迪丽热巴', '古力娜扎', '佟丽娅'];
+        console.log(arr2[3]);  // 因为没有这个元素，因此输出的结果是undefined!
+        
+        // 遍历数组
+        var arr3 = ['red', 'green', 'blue'];
+        for (var i = 0; i < arr3.length; i++) {
+            console.log(arr3[i]);
+        }
+        // 数组的长度
+        console.log(arr3.length);
+        // 案例1：数组求和与平均值
+        var arr4 = [2, 6, 1, 7, 4];
+        var sum = 0, mean_value = 0;
+        for (var i = 0; i < arr4.length; i++) {
+            sum += arr4[i];
+        }
+        console.log('arr4数组的和是: ' + sum);
+        mean_value = sum / arr4.length;
+        console.log('平均值是: ' + mean_value);
+        console.log(sum, mean_value);  // 想要输入多个变量，则变量之间用逗号隔开！
+        // 案例2：数组中的最大值
+        var arr5 = [2, 6, 1, 77, 52, 25, 7, 99]
+        var max_value = arr5[0];
+        for(var i = 1; i < arr5.length; i++) {
+            if(arr5[i] >= max_value) {
+                max_value = arr5[i];
+            }
+        }
+        console.log('数组中的最大值是: ' + max_value);
+        
+        
+        // 案例3：数组转换为分割字符串
+        var arr6 = ['red', 'green', 'blue', 'pink'];
+        var str = '';
+        var sep = '!'
+        for (var i = 1; i < arr6.length; i++) {
+            str += arr6[i] + sep;
+        }
+        console.log('数组转换为分割字符串的结果是: ' + str);
+        
+        // 1. 新增数组元素：修改length长度
+        var arr = ['red', 'green', 'blue'];
+        console.log(arr.length);
+        arr.length = 5;  // 把数组的长度修改成了5，数组中此时用5个元素
+        console.log(arr.length);
+        console.log(arr);
+        console.log(arr[3], arr[4]);  // undefined undefined
+        // 2.新增数组元素：修改索引号,追加数组元素
+        var arr1 = ['red', 'green', 'blue'];
+        arr1[3] = 'pink';
+        arr1[4] = 'hotpink';
+        console.log(arr1);
+        arr1[0] = 'yellow';  // 这里是替换原来的数组元素
+        console.log(arr1);
+        arr1 = '有点意思';
+        console.log(arr1);  // 不要直接给数组名赋值，否则里面的数组元素都没有了
+        
+        // 案例4：数组新增元素
+        var arr = [];
+        for (var i = 0; i < 100; i++) {
+            arr[i] = i + 1;
+        }
+        console.log(arr);
+        // 案例5：筛选数组元素
+        // 方法1
+        var res = [];
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var j = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] >= 10) {
+                // 新数组应该从0开始，依次递增！
+                res[j] = arr[i];
+                j++;
+            }
+        }
+        console.log(res);
+        // 方法2
+        var newArray = [];
+        // newArray.length刚开始等于0
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] >= 10) {
+                newArray[newArray.length] = arr[i];
+            }
+        }
+        console.log(newArray);
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
