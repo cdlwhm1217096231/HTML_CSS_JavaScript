@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的两种声明方式</title>
+    <script>
+        // 1.传统方式
+        function fn() {
+            console.log('我是传统方式!');
+        }
+        fn();
+        // 2.函数表达式(匿名函数): var 变量名 = function() {}
+        var fun = function(args) {
+            console.log('我是函数表达式!');
+            console.log(args);
+            
+        }
+        // 调用函数
+        fun('curry');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

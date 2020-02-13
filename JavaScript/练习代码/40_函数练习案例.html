@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数练习案例</title>
+    <script>
+        // 案例1：利用函数将数组进行翻转
+        function reverseArr(arr) {
+            var res = [];
+            for (var i = arr.length - 1; i >= 0; i--) {
+                res[res.length] = arr[i];
+            }
+            return res;
+        }
+        var arr = ['red', 'green', 'blue', 'pink'];
+        console.log(reverseArr(arr));;
+        // 案例2：利用函数实现冒泡排序
+        function bubbleSort(arr) {
+            for (var i = 0; i < arr.length; i++) {
+                for (var j = i + 1; j < arr.length; j++) {
+                    if (arr[i] > arr[j]) {
+                        var temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        var arr = [1, 5, 3, 2, 4, 0, 4];
+        console.log(bubbleSort(arr));
+        // 案例3：判断是否是闰年
+        function isYear(year) {
+            var flag = false;
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                flag = true;
+            }
+            return flag;
+        }
+        var year = 1999;
+        console.log(isYear(year));
+        
+        // 案例4：函数可以调用另外一个函数
+        function fun1() {
+            console.log(11);
+        }
+        fun1();
+        function fun2() {
+            console.log('函数fun2开始调用函数fun1');
+            fun1();
+        }
+        fun2();
+
+        // 案例5：用户输入年份，输出当前年份2月的天数
+        function FebDays() {
+            var year = prompt('请您输入当前年份：');
+            if (isYear(year)) {
+                alert('当前年份中2月的天数为29天');
+            }
+            alert('当前年份中2月的天数为28天');
+        }
+        FebDays();
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

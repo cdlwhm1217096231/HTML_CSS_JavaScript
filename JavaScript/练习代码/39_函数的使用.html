@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的使用</title>
+    <script>
+        // 函数实现累加和方法，函数就是封装了一段可以重复执行的代码块，目的：就是让大量代码重复使用
+        function getSum(num1, num2) {
+            var sum = 0;
+            for (var i = num1; i <= num2; i++) {
+                sum += i;
+            }
+            console.log(sum);
+        }
+        // 调用函数getSum()
+        getSum(1, 100);
+        // 调用函数getSum()
+        getSum(10, 50);
+
+
+        // 函数的使用：声明函数和调用函数
+        // 声明函数
+        function Hicurry() {
+            console.log('hi curry!');
+        }
+        // 调用函数
+        Hicurry();
+
+
+        // 函数的参数
+        function cook(args) {
+            console.log(args);
+        }
+        cook('我是库里的粉丝');
+        cook('我是你爸爸');
+        // 利用函数求任意两个数的和
+        function getAdd(num1, num2) {
+            console.log(num1 + num2);
+        }
+        getAdd(1, 3);
+        getAdd(3, 8);
+        // 利用函数求任意两个数之间的和
+        function getSums(start, end) {
+            var sum = 0;
+            for (var i = start; i <= end; i++) {
+                sum += i;
+            }
+            console.log(sum);
+        }
+        getSums(1, 100);
+        getSums(20, 50);
+
+
+        // 函数形参和实参个数匹配
+        function getsum(num1, num2) {
+            console.log(num1 + num2);
+        }
+        // 1.如果实参的个数与形参的个数一致，则正常输出结果
+        getsum(1, 20);
+        // 2.如果实参的个数大于形参的个数，会取到形参的个数！
+        getsum(1, 20, 10);
+        // 3.如果实参的个数小于形参的个数，多于的形参定义为undefined，最终的结果是NaN
+        // 形参可以看成是不用声明的变量，num2可以看成是一个变量，但是没有接收值，因此它的值是undefined
+        // 建议：尽量让形参的个数与实参相匹配！
+        getsum(1); // NaN
+
+
+        // 函数的返回值
+        function getRes() {
+            return '我是库里的粉丝';
+        }
+        // 调用函数
+        console.log(getRes()); // getRes() = '我是库里的粉丝'
+        function getSumS(num1, num2) {
+            return num1 + num2;
+        }
+        console.log(getSumS(1, 3));
+        // 案例1：利用函数求两个数的最大值
+        function getMax(num1, num2) {
+            return num1 >= num2 ? num1 : num2;
+        }
+        console.log(getMax(1, 100));
+        // 案例2：利用函数求数组中的最大值
+        var arr = [5, 2, 99, 101, 67, 77];
+
+        function getArrMax(arr) {
+            var max_value = arr[0];
+            for (var i = 1; i < arr.length; i++) {
+                if (arr[i] > max_value) {
+                    max_value = arr[i];
+                }
+            }
+            return max_value;
+        }
+        // 在实际开发中，经常用一个变量接收函数的返回结果，更简单
+        var temp = getArrMax(arr);
+        console.log(temp);
+        // 函数返回值的注意点1：return会中止函数
+        function GetSum(num1, num2) {
+            return num1 + num2;
+            alert('我是不会被执行的!');
+        }
+        console.log(GetSum(1, 399));
+        // 函数返回值的注意点2：return只能返回一个值
+        function fn(num1, num2) {
+            return num1, num2; // 返回的结果是最后一个值
+        }
+        console.log(fn(1, 88)); // 88
+        // 同时返回多个值:可以使用数组来实现
+        function getResult(num1, num2) {
+            return [num1 + num2, num1 - num2, num1 * num2, num1 / num2];
+        }
+        console.log(getResult(1, 3));
+        // 函数没有return，返回undefined
+        function fun(num1, num2) {
+
+        }
+        console.log(fun(1, 2));
+
+
+        // arguments的使用
+        function fun1() {
+            console.log(arguments); // arguments中传递了所有从外界传递过来的实参
+            console.log(arguments.length);
+            console.log(arguments[2]);
+            // 按照数组的方式对arguments进行遍历
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+        fun1(11, 23, 293);
+        fun1(1, 2, 5, 66, 44, 666, 65454);
+
+        // 案例：利用函数求任意个数的最大值
+        function fun2() {
+            var max_value = arguments[0];
+            for(var i = 1; i < arguments.length; i++) {
+                if (arguments[i] > max_value) {
+                    max_value = arguments[i];
+                }
+            }
+            return max_value;
+        }
+        console.log('任意个数的最大值是: ' + fun2(4,32,1,0, 339));
+        console.log('任意个数的最大值是: ' + fun2(9, 1, 2));
+        console.log('任意个数的最大值是: ' + fun2(6, 66, 666, 6666, 66666, 666666));
+        
+
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
