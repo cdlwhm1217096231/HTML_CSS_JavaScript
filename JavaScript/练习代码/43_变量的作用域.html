@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量的作用域</title>
+    <script>
+        var num = 10;  // num就是一个全局变量
+        console.log(num);
+        
+        function fun() {
+            console.log(num);
+            
+        }
+        fun()
+        // console.log(args);  // 函数形参是局部变量
+        function Bar(args){
+            var num1 = 200;  // num1就是局部变量，只能在函数内部使用
+            num2 = 20;  // 全局变量
+        }
+        console.log(Bar());  // undefined
+        // console.log(num1);  // 报错
+        console.log(num2);
+        // 从执行效率来看全局变量和局部变量
+       /*  全局变量只有在浏览器关闭的时候才会销毁，比较占内存；
+        局部变量当程序执行完毕，就会销毁，比较节约内存资源； */
+
+
+        // 目前，JS中没有块级作用域。在ES6后就新增了块级作用域{}。
+        if (3 < 5) {
+            var num = 20;
+        }
+        console.log(num);
+
+        // 作用域链：内部函数访问外部函数的变量，采用的是链式查找的方式来决定取哪一个值，这种机制称为作用域链(就近原则)
+        var num = 666;
+        function haha() {  // 外部函数
+            var num = 888;
+            function dana() {  // 内部函数
+                console.log(num);
+            }
+            console.log(num);
+            dana();
+        }
+        haha();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

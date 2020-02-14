@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS中的作用域</title>
+    <script>
+        // JS中的作用域就是代码名字在某个范围内起作用和效果，为了提高程序的可靠性，减少变量名的冲突
+        var num = 10;  // 全局作用域
+        var num = 30;
+        function fun() {
+            // 局部作用域或函数作用域
+            var num = 20;
+            console.log(num);
+        }
+        console.log(num);
+        fun();
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
