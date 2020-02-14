@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript中的对象</title>
+    <script>
+        // 1.利用对象字面量创建对象
+        var obj = {};  // 创建了一个空对象
+        var player = {
+            name: 'curry',
+            age: '32',
+            gender: 'male',
+            sayHi: function () {
+                console.log('Hi, Curry');
+            }
+        }
+        // 使用对象的属性----两种方法
+        console.log(player.name);
+        console.log(player['age']);
+        // 使用对象的方法
+        player.sayHi();
+
+
+        // 2.利用new Object创建对象
+        var zsf = new Object(); // 创建了一个空对象
+        zsf.name = '库里';
+        zsf.age = 32;
+        zsf.sex = 'man';
+        zsf.sayhi = function() {
+            console.log('Hello Curry!');
+        }
+        console.log(zsf.name);
+        console.log(zsf['sex']);
+        zsf.sayhi();
+        
+
+        // 3.利用构造函数可以一次性创建多个对象
+        var star1 = {
+            name: '刘德华',
+            age: 55,
+            sing: function() {
+                console.log('技能是唱歌');
+            }
+        }
+        
+        var star2 = {
+            name: '张学友',
+            age: 58,
+            sing: function() {
+                console.log('歌神！');
+            }
+        }
+        // 创建四大天王的对象
+        function Star(name, age, sex) {
+            // 属性
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            // 方法
+            this.song = function(music) {
+                console.log('四大天王构造函数中的方法');  
+                console.log(this.name + '是四大天王之一, 他的年龄是' + this.age + '岁, 他演唱了歌曲《' + music + '》');
+            }
+        }
+        // 调用构造函数
+        var ldh = new Star('刘德华', 55, '男');  // 调用构造函数，返回的是一个对象
+        console.log(ldh.name);
+        console.log(ldh.age);
+        console.log(ldh['sex']);
+        ldh.song('冰雨');
+        console.log(typeof ldh);
+        var zxy = new Star('张学友', 58, '男');
+        zxy.song('吻别');
+        
+        // 案例：创建王者荣耀的构造函数
+        function King(name, type, blood, attack) {
+            this.name = name;
+            this.type = type;
+            this.blood = blood;
+            this.attack = attack;
+        }
+        var lp = new King('廉颇', '力量型', '500血量', '近战');
+        var hy = new King('后羿', '射手型', '100血量', '远程');
+        console.log(lp.name);
+        console.log(lp.type);
+        console.log(lp.blood);
+        console.log(lp.attack);
+        console.log('--------------------');
+        console.log(hy['name']);
+        console.log(hy['type']);
+        console.log(hy['blood']);
+        console.log(hy['attack']);
+
+
+        // 遍历对象:for...in语句
+        var gg = {
+            name: 'curry',
+            age: 32,
+            sex: 'man', 
+            fn: function () {
+                
+            }
+        }
+        for(var k in gg) {
+            console.log(k);  // k是变量，得到的是属性名
+            console.log(gg[k]);  // gg[k]得到的是属性值
+        }
+        
+        
+        
+        
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
