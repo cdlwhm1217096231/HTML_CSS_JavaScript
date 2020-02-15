@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单数据类型与复杂数据类型</title>
+    <script>
+        // 简单数据类型null，返回的是一个空的对象
+        var timer = null;
+        console.log(typeof timer);  // object对象
+        // null应用场景：如果有变量以后打算存储为对象，暂时没想好放啥，这时候就给null
+
+
+        // 简单数据类型传参
+        function fn(a) {
+            a++;
+            console.log(a);
+        }
+        var x = 10;
+        fn(x);
+        console.log(x);
+        
+
+        // 复杂数据类型传参
+        function Person(name) {
+            this.name = name;
+        }
+        function f1(x) {
+            console.log(x.name);  // 刘德华
+            x.name = '张学友';
+            console.log(x.name);  // 张学友
+        }
+
+        var p = new Person('刘德华');
+        console.log(p.name);  // 刘德华
+        f1(p);
+        console.log(p.name);  // 张学友
+        
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
