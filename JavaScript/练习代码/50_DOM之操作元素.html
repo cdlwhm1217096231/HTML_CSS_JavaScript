@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM之操作元素</title>
+    <style>
+        div,
+        p {
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            color: #fff;
+            background-color: pink;
+        }
+
+    </style>
+</head>
+
+<body>
+    <button>显示当前系统时间</button>
+    <div>某个时间</div>
+    <div id="nav"></div>
+    <p id="page">
+        123
+        <span>我是文字</span>
+    </p>
+
+    <script>
+        // (1)操作元素之改变元素内容
+        // 需求：当点击了按钮后，div标签中的文字会发生变化
+        // 1.获取元素
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        // 2.注册事件+3.事件处理程序
+        btn.onclick = function () {
+            // div.innerText = '2020-02-17';
+            div.innerHTML = getDate();
+        }
+
+        function getDate() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var dates = date.getDate();
+            var day = date.getDay();
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            return '今天是：' + year + '年' + month + '月' + dates + '日 ' + arr[day];
+        }
+        // 元素也可以不用添加事件---操作DOM
+        var p = document.querySelector('p');
+        p.innerHTML = getDate();
+
+
+        // innerText和innerHTML的区别
+        // 1.innerText：不识别html标签 非标准
+        var div = document.querySelector('div');
+        div.innerText = '<strong>今天是：</strong>2020';
+        // 2.innerHTML：不识别HTML标签  W3C标准，保留空格和换行
+        var div = document.getElementById('nav');
+        div.innerHTML = '<strong>今天是：</strong>2020';
+        // 3.这两个属性是可读写的，可以获取元素里面的内容
+        var p = document.getElementById('page');
+        console.log(p.innerText);
+        console.log(p.innerHTML);
+        
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM之事件基础</title>
+</head>
+<body>
+    <!-- 事件的三要素 -->
+    <button id='btn'>唐伯虎</button>
+    <div>123</div>
+    <script>
+        // 点击一个按钮，弹出对话框
+        // 1.事件是由三部分组成：事件源、事件类型、事件处理程序(事件三要素)
+        // (1)事件源：事件被触发的对象，谁被触发了？（上例中就是按钮）
+        var btn = document.getElementById('btn');
+        // (2)事件类型：如何触发，什么事件。例如：鼠标点击(onclick)、鼠标经过、键盘按下等。
+        // (3)事件处理程序：通过一个函数赋值的方式完成
+        btn.onclick = function() {
+            alert('点秋香');
+        }
+
+
+        // 事件执行步骤
+        // 点击div控制台输出，我被选中了
+        // (1).获取事件源
+        var div = document.querySelector('div');
+        // (2).绑定事件
+        // div.onclick
+        // (3).添加事件处理程序
+        div.onclick = function() {
+            alert('我被选中了!');
+        }
+    </script>
+</body>
+</html>
