@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过className更改元素样式</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color:pink;
+            margin: 100px auto;
+        }
+        /* 鼠标点击后，新增的样式 */
+        .change {
+            background-color:purple;
+            color: #fff;
+            font-size: 25px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">文本</div>
+    <script>
+        var test = document.querySelector('div');
+        test.onclick = function() {
+            // 让当前元素的类名，改成了change
+
+            // 2.通过修改元素的className更改元素的样式，适合于样式较多或功能复杂的情况
+            // 3.如果想要保留原先的类名，可以用下面的方法即多类名选择器
+            this.className = 'first change';
+            // this.className = 'change';
+        }
+        
+    </script>
+</body>
+</html>

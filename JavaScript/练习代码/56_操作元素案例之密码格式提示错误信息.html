@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作元素案例之密码格式提示错误信息</title>
+    <style>
+        div {
+            width: 600px;
+            margin: 100px auto;
+        }
+
+        .message {
+            display: inline-block;
+            font-size: 12px;
+            color: #999;
+            background: url(../CSS3/images/mess.png) no-repeat left center;
+            padding-left: 20px;
+        }
+
+        .wrong {
+            color: red;
+            background-image: url(../CSS3/images/wrong.png);
+        }
+
+        .right {
+            color: green;
+            background-image: url(../CSS3/images/right.png);
+        }
+    </style>
+</head>
+<body>
+    <!-- 分析：首先判断的事件是表单失去焦点onblur -->
+    <!-- 如果输入正确则提示正确的信息，颜色为小绿色小图标变化 -->
+    <!-- 如果输入错误，则提示错误信息颜色为红色小图标变化 -->
+    <!-- 因为里面样式变化较多，采用className来修改样式 -->
+    <div class="register">
+        <input type="password" class="ipt">
+        <p class="message">请输入6~16位密码</p>
+    </div>
+
+    <script>
+        // 1.获得元素
+        var ipt = document.querySelector('.ipt');
+        var message = document.querySelector('.message');
+        // 2.注册事件  失去焦点
+        ipt.onblur = function() {
+            // 根据表单中值的长度ipt.value.length
+            if(this.value.length < 6 || this.value.length > 16) {
+               message.className = 'message wrong';
+               message.innerHTML = '您输入的密码位数不对，要求6~16位之间';
+            }else {
+                message.className = 'message right';
+                message.innerHTML = '您输入的正确';
+            }
+        }
+    </script>
+</body>
+</html>

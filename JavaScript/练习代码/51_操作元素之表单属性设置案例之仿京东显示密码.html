@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+        }
+
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+
+        .box img {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 需求：点击按钮将密码框切换为文本框，并可以查看密码明文 -->
+    <div class="box">
+        <label for=""><img src="../CSS3/images/close.png" alt="" id="eye"></label>
+        <input type="password" id="pwd">
+    </div>
+    <script>
+        // 1.获取元素
+        var eye = document.getElementById('eye');
+        var pwd = document.getElementById('pwd');
+        // 2.注册事件与处理程序
+        var flag = 0;
+        eye.onclick = function () {
+            // 鼠标点击一次后，flag一定要变化
+            if (flag == 0) {
+                pwd.type = 'text';
+                eye.src = '../CSS3/images/open.png';
+                flag = 1;
+            } else {
+                pwd.type = 'password';
+                eye.src = '../CSS3/images/close.png';
+                flag = 0;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

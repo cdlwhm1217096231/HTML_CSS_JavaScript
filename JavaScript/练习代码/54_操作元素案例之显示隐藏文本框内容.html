@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作元素案例之显示隐藏文本框内容</title>
+    <style>
+        input {
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <!-- 需求：当鼠标点击文本框时，里面的默认文字隐藏；当鼠标离开文本框时，里面的文字显示-->
+    <!-- 思路：首先表单需要2个新的事件，获得焦点onfocus和失去焦点onblur -->
+    <!-- 如果获得焦点，判断表单中的内容是否是默认文字，如果是默认文字，就清空表单内容 -->
+    <!-- 如果失去焦点，判断表单内容是否为空，如果为空，则表单内容改成默认文字 -->
+    <input type="text" value="手机">
+
+    <script>
+        // 1.获取元素
+        var text = document.querySelector('input');
+        // 2.注册事件，获得焦点事件onfocus
+        text.onfocus = function() {
+            // console.log('得到了焦点');
+            if(text.value === '手机') {
+                this.value = '';
+            }
+            // 获得焦点后，需要把文本框中的文字变黑
+            this.style.color = '#333';
+        }
+        // 3.注册事件，失去焦点事件onblur
+        text.onblur = function() {
+            // console.log('失去了焦点');
+            if(text.value === ''){
+                this.value = '手机';
+            }
+            // 失去焦点需要把文本框中的文字颜色变为浅色
+            this.style.color = '#999';
+        }
+    </script>
+</body>
+</html>

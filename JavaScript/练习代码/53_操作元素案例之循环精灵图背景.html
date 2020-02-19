@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .box {
+            width: 250px;
+            margin: 100px auto;
+        }
+
+        .box li {
+            float: left;
+            width: 24px;
+            height: 24px;
+            background-color: pink;
+            margin: 15px;
+            background: url(../CSS3/images/sprite.png) no-repeat;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 操作元素案例之循环精灵图背景 -->
+    <!-- 思路：利用for循环设置一组元素的精灵图背景即修改精灵图片的背景位置background-position -->
+    <!-- 规律：让循环中的i索引号*44就是每个图片的y坐标 -->
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script>
+        // 1.获取元素
+        var lis = document.querySelectorAll('li');
+        for(var i = 0; i < lis.length; i++) {
+            // 核心：让索引号*44就是每个li的y坐标
+            var index_y = i * 44;
+            lis[i].style.backgroundPosition = '0 -' + index_y + 'px';
+        }
+    </script>
+</body>
+</html>

@@ -15,6 +15,16 @@
             background-color: pink;
         }
 
+        img {
+            width: 300px;
+        }
+
+        #demo {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+        }
     </style>
 </head>
 
@@ -26,6 +36,19 @@
         123
         <span>我是文字</span>
     </p>
+
+    <button id="zxy">张学友</button>
+    <button id="ldh">刘德华</button> <br>
+    <!-- <img src="../CSS3/images/ldh.jpg" alt="" title="刘德华"> -->
+    <img src="../CSS3/images/s.gif" alt="">
+    <div id="morning">上午好</div>
+
+    <button id="btns">按钮</button>
+    <input type="text" value="请输入内容">
+
+    <div id="demo">
+
+    </div>
 
     <script>
         // (1)操作元素之改变元素内容
@@ -64,9 +87,66 @@
         var p = document.getElementById('page');
         console.log(p.innerText);
         console.log(p.innerHTML);
+
+
+        // (2)操作元素之修改元素属性
+        // 1.获取元素
+        // var ldh = document.getElementById("ldh");
+        // var zxy = document.getElementById("zxy");
+        // var img = document.querySelector("img");
+        // // 2.注册事件和事件处理程序
+        // zxy.onclick = function() {
+        //     img.src = '../CSS3/images/zxy.jpg';
+        //     img.title = '歌神张学友';
+        // }
+        // ldh.onclick = function() {
+        //     img.src = '../CSS3/images/ldh.jpg';
+        //     img.title = '刘德华';
+        // }
+        // 操作元素案例：分时显示不同图片，显示不同的问候语
+        // 1.获取元素
+        var img = document.querySelector('img');
+        var div = document.getElementById("morning");
+        // 2.得到当前的小时
+        var date = new Date();
+        var h = date.getHours();
+        // 3.判断小时来改变图片和文字信息
+        if (h < 12) {
+            img.src = '../CSS3/images/s.gif';
+            div.innerHTML = '上午好，好好写代码';
+        } else if (h < 18) {
+            img.src = '../CSS3/images/x.gif';
+            div.innerHTML = '下午好，好好写代码';
+        } else {
+            img.src = '../CSS3/images/w.gif';
+            div.innerHTML = '晚上好，好好写代码';
+        }
+
+
+
+        // (3)操作元素之表单属性设置
+        // 1.获取元素
+        var btn = document.getElementById("btns");
+        var input = document.querySelector("input");
+        // 2.注册事件和事件处理程序
+        btn.onclick = function() {
+            // input.innerHTML = '被点击了';  innerHTML这个是修改普通盒子里面的内容，比如div标签；表单里面的文字内容是通过value来修改的!
+            input.value = '被点击了';
+            // 如果想要某个表单被禁用，不能再被连续点击，可以使用disabled属性；这里，我们想要这个按钮button禁用!
+            // btn.disabled = true;
+            this.disabled = true;  // 与上一句等价，this指向的是事件函数的调用者btn
+        }
         
 
-        
+        // (4)操作元素之样式属性设置
+        // 1.获取元素
+        var div = document.getElementById('demo');
+        // 2.注册事件和处理程序
+        div.onclick = function() {
+            // div.style等价于this.style
+            this.style.backgroundColor = 'purple';
+            this.style.width = '250px';
+        }
     </script>
 </body>
 
