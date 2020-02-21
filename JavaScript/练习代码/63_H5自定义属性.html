@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5自定义属性</title>
+</head>
+<body>
+    <div getTime="20" data-index="2" data-list-name="Curry"></div>
+    <script>
+        var div = document.querySelector('div');
+        // console.log(div.getTime);
+        console.log(div.getAttribute('getTime'));
+        div.setAttribute('data-time', 23);
+        console.log(div.getAttribute('data-time'));
+        console.log(div.getAttribute('data-list-name'));
+        
+        // H5新增的获取自定义属性的方法----它只能获得以data-开头的属性
+        console.log(div.dataset.time);
+        // dataset是一个集合，里面存放了所有以data开头的自定义属性
+        console.log(div.dataset);
+        console.log(div.dataset['index']);
+        // 如果自定义属性中有多个-连接的单词，获取的时候必须采用驼峰命名法
+        console.log(div.dataset.listName);
+        console.log(div.dataset['listName']);
+        
+        
+    </script>
+</body>
+</html>
