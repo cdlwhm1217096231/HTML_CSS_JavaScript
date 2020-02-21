@@ -505,5 +505,10 @@
 #### 4.操作元素总结
 - 操作元素是DOM中的核心内容，主要知识如下：
 ![操作元素总结.png](https://upload-images.jianshu.io/upload_images/13407176-6916b9d9a700cf70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-#### 5.资料下载
+#### 5.操作元素之排他思想[算法]
+- 如果用同一组元素，我们想要某一个元素实现某种样式，需要用到循环的排他思想算法：
+    - (1).首先将所有元素全部清除样式；
+    - (2).然后给当前元素设置样式；
+- **注意**：顺序不能颠倒，首先干掉其他人，在设置自己。
+#### 6.资料下载
 - [笔记及代码，欢迎star,follow,fork......](https://github.com/cdlwhm1217096231/HTML_CSS_JavaScript/tree/master/JavaScript)

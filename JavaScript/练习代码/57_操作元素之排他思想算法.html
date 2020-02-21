@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排他思想算法</title>
+
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+    <script>
+        // 1.获取所有元素
+        var btns = document.getElementsByTagName('button');
+        // btns得到是伪数组
+        for(var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function() {
+                // (1).首先把所有的按钮背景颜色都去掉
+                for(var i = 0; i < btns.length; i++) {
+                    btns[i].style.backgroundColor = '';
+                }
+                // (2).然后让当前的元素背景颜色变为pink
+                this.style.backgroundColor = 'pink';
+            }
+        }
+        // 2.首先排除其他人，然后再设置自己的样式，这种排除其他人的思想就称为排他思想
+    </script>
+</body>
+</html>
