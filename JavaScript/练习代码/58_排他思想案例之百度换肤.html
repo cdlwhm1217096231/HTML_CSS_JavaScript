@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百度换肤</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background: url(../CSS3/images/1.jpg) no-repeat center top;
+        }
+        li {
+            list-style: none;
+        }
+
+        .baidu {
+            overflow: hidden;
+            margin: 100px auto;
+            background-color: #fff;
+            width: 410px;
+            padding-top: 3px;
+        }
+
+        .baidu li {
+            float: left;
+            margin: 0 1px;
+            cursor: pointer;
+        }
+
+        .baidu img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="baidu">
+        <li><img src="../CSS3/images/1.jpg" alt=""></li>
+        <li><img src="../CSS3/images/2.jpg" alt=""></li>
+        <li><img src="../CSS3/images/3.jpg" alt=""></li>
+        <li><img src="../CSS3/images/4.jpg" alt=""></li>
+    </ul>
+    <script>
+        // 1.获取元素
+        var imgs = document.querySelector('.baidu').querySelectorAll('img');
+        // 2.循环注册事件
+        for(var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function() {
+            // this.src就是点击图片的路径
+            console.log(this.src);
+            // 把this.src这个路径赋值给body
+            document.body.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script>
+</body>
+</html>

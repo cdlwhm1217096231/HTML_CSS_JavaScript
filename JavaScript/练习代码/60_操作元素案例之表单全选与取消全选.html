@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作元素案例之表单全选与取消全选</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .wrap {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 300px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color:#f0f0f0;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color:#fafafa;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="j_cbAll"></th>
+                    <th>商品</th>
+                    <th>价钱</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>iPhone8</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>iPad Pro</td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>iPad Air</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>Apple Watch</td>
+                    <td>2000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // 1.全选与取消全选做法：让所有复选框的checked属性(选中状态)跟随全选按钮即可；
+        // (1)获取元素
+        var j_cbAll = document.getElementById('j_cbAll');  // 全选按钮
+        var j_tbs = document.getElementById('j_tb').getElementsByTagName('input');
+        // (2)注册事件
+        j_cbAll.onclick = function() {
+            // this.checked可以得到当前复选框的选择状态true/false
+            for(var i = 0; i < j_tbs.length; i++) {
+                j_tbs[i].checked = this.checked;
+            }
+        }
+        // 2.下面复选框需要全部选中，上面的全选按钮才能被选中：给下面所有复选框绑定点击事件。每次点击，都要循环查看下面所有的复选框是否存在没被选中的。如果有一个没被选中，上面的全选按钮就不被选中。可以设置一个变量，来控制全选是否被选中。
+        for(var i = 0; i < j_tbs.length; i++) {
+            j_tbs[i].onclick = function() {
+                // flag变量控制全选按钮是否被选中
+                var flag = true;
+                // 每次点击下面的复选框都要检查4个小按钮是否全被选中
+                for(var i = 0; i < j_tbs.length; i++) {
+                    if(!j_tbs[i].checked) {
+                        flag = false;
+                        break;  // 提高执行效率，因为只要一个没有被选中，就不需要再判断后面的按钮是否被选中了
+                    }
+                }
+                j_cbAll.checked = flag;
+            }
+        }
+    </script>
+</body>
+</html>

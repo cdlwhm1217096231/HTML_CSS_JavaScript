@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格隔行变色</title>
+    <style>
+        table {
+            width: 800px;
+            margin: 100px auto;
+            text-align: center;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        thead tr {
+            height: 30px;
+            background-color: skyblue;
+        }
+
+        tbody tr {
+            height: 30px;
+        }
+
+        tbody td {
+            border-bottom: 1px solid #d7d7d7;
+            font-size: 12px;
+            color: blue;
+        }
+
+        .bg {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>代码</th>
+                <th>名称</th>
+                <th>最新公布净值</th>
+                <th>累计净值</th>
+                <th>前单位净值</th>
+                <th>净值增长率</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // 1.新的鼠标事件 鼠标经过onmouseover  鼠标离开onmouseout
+        // 2.核心思路：鼠标经过tr行，当前的行变背景颜色，鼠标离开去掉当前的背景颜色
+        // 3.注意：第一行(thead中的行)不需要变换颜色，因此获取的是tbody中的行
+
+        // (1).获取元素，获取的是tbody中所有的行
+        var trs = document.querySelector('tbody').querySelectorAll('tr');
+        // (2).利用循环注册事件
+        for(var i = 0; i < trs.length; i++) {
+            // (3).鼠标经过事件onmouseover
+            trs[i].onmouseover = function() {
+                this.className = 'bg';
+            }
+            // (4).鼠标离开事件onmouseout
+            trs[i].onmouseout = function() {
+                this.className = '';
+            }
+        }
+    </script>
+</body>
+</html>

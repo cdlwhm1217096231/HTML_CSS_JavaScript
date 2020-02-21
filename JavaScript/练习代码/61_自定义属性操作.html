@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义属性操作</title>
+</head>
+<body>
+    <div id="demo" index="1" class="nav"></div>
+    <script>
+        // 1.获取元素的属性值
+        // (1)element.属性
+        var div = document.querySelector('div');
+        console.log(div.id);
+        // (2)element.getAttribute('属性')  自定义属性：程序员自己添加的熟悉
+        console.log(div.getAttribute('id'));
+        console.log(div.getAttribute('index'));
+        // 2.设置属性值
+        // (1)element.属性='值';
+        div.id = 'test';
+        div.className = 'navs';
+        // (2)element.setAttribute('属性','值');主要针对自定义属性
+        div.setAttribute('index', 2);
+        div.setAttribute('class', 'footer');  // class比较特殊，所以这里写的就是class不是className
+        // 3.移除属性
+        div.removeAttribute('index');
+    </script>
+</body>
+</html>

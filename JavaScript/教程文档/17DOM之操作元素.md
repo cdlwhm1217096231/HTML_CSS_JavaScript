@@ -510,5 +510,37 @@
     - (1).首先将所有元素全部清除样式；
     - (2).然后给当前元素设置样式；
 - **注意**：顺序不能颠倒，首先干掉其他人，在设置自己。
-#### 6.资料下载
+#### 6.操作元素之自定义属性操作
+- **获取属性值**
+    - element.属性：获取属性值；
+    - element.getAttribute('属性')；
+- **上述两种方法的区别**：
+    - element.属性：获取内置属性值(元素本身自带的属性)；
+    - element.getAttribut('属性')：主要获得自定义的属性(标准)，程序员自己定义的属性；
+- **设置属性值**
+    - element.属性 = '值'：设置内置属性值；
+    - element.setAttribute('属性', '值')，主要用于设置自定义属性；
+- **移除属性**
+    - element.removeAttribute('属性')；
+#### 7.H5自定义属性
+- **自定义属性的目的**：为了保存并使用数据。有些数据可以保存到页面中而不用保存到数据库中。
+- 自定义属性获取是通过getAttribute('属性')获取；
+- 但是，有些自定义属性很容易引起歧义，不容易判断是元素的内置属性还是自定义属性。
+- H5新增了自定义属性：
+    - **设置H5自定义属性**
+        - H5规定自定义属性data-开头作为属性名并且赋值；
+            ```
+            <div data-index="1"></div>
+            ```
+        - 或者使用JS设置
+            ```
+            element.setAttribute('data-index', 2);
+            ```
+    - **获取H5自定义属性**
+        - 兼容性获取
+            ```
+            element.getAttribute('data-time');
+            ```
+        - H5新增element.dataset.index或者element.dataset['index'] IE11才开始支持；**dataset是一个集合，里面存放了所有以data开头的自定义属性**；如果自定义属性中有多个-连接的单词，获取的时候必须采用驼峰命名法。
+#### 8.资料下载
 - [笔记及代码，欢迎star,follow,fork......](https://github.com/cdlwhm1217096231/HTML_CSS_JavaScript/tree/master/JavaScript)
