@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单版发布留言案例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding: 100px;
+        }
+
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            outline: none;
+            resize: none;
+        }
+
+        ul {
+            margin-top: 50px;
+        }
+
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245, 209 243);
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <ul>
+
+    </ul>
+    <script>
+        // 核心思路：点击按钮后，就动态创建一个li，添加到ul中
+        // 创建li的同时，把文本域中的值通过li.innerHTML赋值给li
+        // 如果想要新的留言后面显示就用appendChild；如果想要前面显示就用insertBefore
+        // 1.获取元素
+        var btn = document.querySelector('button');
+        var text = document.querySelector('textarea');
+        var ul = document.querySelector('ul');
+        // 2.注册事件
+        btn.onclick = function () {
+            if (text.value == '') {
+                alert('您没有输入内容');
+                return false;
+            } else {
+                console.log(text.value);
+                // (1)创建元素
+                var li = document.createElement('li');
+                // 先有li才能赋值
+                li.innerHTML = text.value;
+                // (2)添加元素
+                // ul.appendChild(li);
+                ul.insertBefore(li,ul.children[0]);
+            }
+
+        }
+    </script>
+</body>
+
+</html>
