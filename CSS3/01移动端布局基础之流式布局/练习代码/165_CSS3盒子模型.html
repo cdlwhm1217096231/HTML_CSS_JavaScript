@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3盒子模型</title>
+
+    <style>
+        /* 传统盒子模型 = width + padding + border */
+        div:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            border: 10px solid red;
+            box-sizing: content-box;
+        }
+
+        div:nth-child(2) {
+            /* 有了这句话，就让盒子变成CSS3盒子模型 */
+            box-sizing: border-box;
+            /* padding和border不会撑大盒子模型了 */
+            width: 200px;
+            height: 200px;
+            background-color:purple;
+            padding: 10px;
+            border: 10px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+</body>
+</html>
