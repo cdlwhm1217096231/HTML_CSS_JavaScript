@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 给父级添加flex属性! */
+            display: flex;
+            width: 800px;
+            height: 300px;
+            background-color: pink;
+            /* 默认的主轴是x轴 行row，那么y轴就是侧轴啦 */
+            /* 我们的元素跟着主轴来排列的! */
+            /* flex-direction: row; */
+            /* 简单了解 翻转 */
+            /* flex-direction: row-reverse; */
+            /* 我们可以把主轴设置为y轴，那么x轴就成了侧轴 */
+            flex-direction: column;
+        }
+
+        div span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+</html>
