@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 800px;
+            height: 400px;
+            background-color: pink;
+            /* 默认的主轴是x轴 row */
+            flex-direction: column;
+            justify-content: center;
+            /* 我们需要侧轴居中 */
+            align-items: center;
+            /* 拉伸，但是子盒子不要给高度! */
+            /* align-items: stretch; */
+
+        }
+
+        div span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+            color: #fff;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+</html>
