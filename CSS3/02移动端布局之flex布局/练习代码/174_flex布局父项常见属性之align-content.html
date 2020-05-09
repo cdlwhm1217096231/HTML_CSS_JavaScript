@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 800px;
+            height: 600px;
+            background-color: pink;
+            /* 换行 */
+            flex-wrap: wrap;
+            /* 因为有了换行，此时侧轴上控制子元素的对齐方式使用align-content */
+            align-content: space-around;
+        }
+
+        div span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+            color: #fff;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </div>
+</body>
+</html>
