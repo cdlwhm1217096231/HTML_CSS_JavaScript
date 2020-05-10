@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 80%;
+            height: 300px;
+            background-color: pink;
+        }
+
+        div span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+            margin-right: 5px;
+        }
+
+        div span:nth-child(2) {
+            /* 默认是0 */
+            order: -1;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+</html>
