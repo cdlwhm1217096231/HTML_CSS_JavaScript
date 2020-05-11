@@ -97,5 +97,10 @@
     1. node.appendChild(child)
     2. node.insertBefore(child, 指定元素)
     ```
-#### 6.资料下载
+#### 6.删除节点
+- node.removeChild(child)方法**从DOM父节点中删除一个子节点，返回删除的节点**。
+#### 7.复制(克隆)节点
+- node.cloneNode()方法**返回调用该方法的节点的一个副本，也称为克隆节点或拷贝节点**。
+- 注意：**如果括号参数为空或false，则是浅拷贝。即只克隆复制节点本身，不克隆里面的子节点**。
+#### 8.资料下载
 - [笔记及代码，欢迎star,follow,fork......](https://github.com/cdlwhm1217096231/HTML_CSS_JavaScript/tree/master/JavaScript)
