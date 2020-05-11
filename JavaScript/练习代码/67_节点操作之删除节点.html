@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>删除</button>
+    <ul>
+        <li>熊大</li>
+        <li>熊二</li>
+        <li>光头强</li>
+    </ul>
+
+    <script>
+        // 1.获取元素
+        var ul = document.querySelector('ul');
+        var btn = document.querySelector('button');
+        // 2.删除元素 node.removeChild(child)
+        // ul.removeChild(ul.children[0]);
+        // 3.点击按钮依次删除里面的孩子
+        btn.onclick = function() {
+            if(ul.children.length == 0) {
+                this.disabled = true;
+            }
+            else {
+                ul.removeChild(ul.children[0]);
+            }
+        }
+    </script>
+</body>
+</html>
