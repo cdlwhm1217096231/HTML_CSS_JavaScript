@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单版发布留言案例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding: 100px;
+        }
+
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            outline: none;
+            resize: none;
+        }
+
+        ul {
+            margin-top: 50px;
+        }
+
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245, 209 243);
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        li a {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <ul>
+
+    </ul>
+    <script>
+        // 核心思路：1.当我们把文本域中的值赋值给li时，多添加一个删除的链接a
+        // 2.需要把所有的链接获取过来，当我们点击当前的链接时，删除当前链接所在的li
+        // 3.阻止链接跳转需要添加javascript:void(0);或javascript:;
+        // 1.获取元素
+        var btn = document.querySelector('button');
+        var text = document.querySelector('textarea');
+        var ul = document.querySelector('ul');
+        // 2.注册事件
+        btn.onclick = function () {
+            if (text.value == '') {
+                alert('您没有输入内容');
+                return false;
+            } else {
+                console.log(text.value);
+                // (1)创建元素
+                var li = document.createElement('li');
+                // 先有li才能赋值
+                li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+                // (2)添加元素
+                // ul.appendChild(li);
+                ul.insertBefore(li,ul.children[0]);
+                // (3)删除元素，删除的是当前链接a对应的父亲li
+                var as = document.querySelectorAll('a');
+                for (var i = 0; i < as.length; i++) {
+                    as[i].onclick = function() {
+                        // node.removeChild(child);  删除的是li，当前a所在的li
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
