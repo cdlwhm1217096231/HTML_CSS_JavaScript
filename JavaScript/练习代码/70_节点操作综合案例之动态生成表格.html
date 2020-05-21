@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<!-- 案例分析 -->
+<!-- 
+    1.因为里面的学生数据都是动态的，需要js动态生成。这里我们模拟数据，自己定义好数据。数据采用对象形式存储。
+    2.所有的数据都放到tbody中的行里面。因为行很多，需要循环创建多个行(对应多少人)
+    3.创建单元格并把数据存入单元格中
+    4.最后一列单元格是删除，需要单独创建单元格
+ -->
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        // 1.先准备好学生的数据
+        var datas = [{
+                name: '魏璎珞',
+                subject: 'JavaScript',
+                score: 100
+            },
+            {
+                name: '弘历',
+                subject: 'Python',
+                score: 90
+            },
+            {
+                name: '傅恒',
+                subject: 'Java',
+                score: 97
+            },
+            {
+                name: '明玉',
+                subject: 'C++',
+                score: 89
+            },
+            {
+                name: '大猪蹄子',
+                subject: 'C#',
+                score: 0
+            }
+        ]
+        // 2.向tbody中创建行：有几个人(通过数组长度)我们就创建几行
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < datas.length; i++) {
+            // 创建tr行
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            // 3.行里面创建单元格(跟数据有关的3个单元格)td,单元格的数量取决于每个对象中属性的个数(for循环遍历对象)
+            for (var k in datas[i]) {
+                // 创建单元格td
+                var td = document.createElement('td');
+                // 把对象里面的属性值给td
+                // console.log(datas[i][k]);
+                td.innerHTML = datas[i][k];
+                tr.appendChild(td);
+            }
+            // 4.创建有删除2个字的单元格
+            var td = document.createElement('td');
+            td.innerHTML = '<a href="javascript:;">删除</a>';
+            tr.appendChild(td);
+        }
+        // 5.删除操作开始
+        var as = document.querySelectorAll('a');
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function() {
+                // 点击a删除当前a所在的行(链接的爸爸的爸爸) node.removeChild(child)
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+    </script>
+</body>
+
+</html>
