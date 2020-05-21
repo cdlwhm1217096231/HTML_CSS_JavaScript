@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <p>abc</p>
+    <div class="inner"></div>
+    <div class="create"></div>
+    <script>
+        // window.onload = function() {
+        //     document.write('<div>123</div>')
+        // }
+        // 三种动态创建元素方式区别
+        // 1.document.write() 创建元素 如果页面文档流加载完毕，再调用这句话会导致页面重绘
+        // var btn = document.querySelector('button');
+        // btn.onclick = function () {
+        //     document.write('<div>123</div>')
+        // }
+        // 2.innerHTML 创建元素
+        var inner = document.querySelector('.inner');
+        // for (var i = 0; i <= 10; i++) {
+        //     inner.innerHTML += '<a href="#">百度</a>';
+        // }
+        var arr = [];
+        for (var i = 0; i <= 10; i++) {
+            arr.push('<a href="#">百度</a>');
+        }
+        inner.innerHTML = arr.join('');
+        // 3.document.createElement() 创建元素
+        var create = document.querySelector('.create');
+        for (var i = 0; i <= 10; i++) {
+            var a = document.createElement('a');
+            create.appendChild(a);
+        }
+    </script>
+</body>
+
+</html>
