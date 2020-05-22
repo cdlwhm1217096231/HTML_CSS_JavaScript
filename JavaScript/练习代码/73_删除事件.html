@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        var divs = document.querySelectorAll('div');
+        divs[0].onclick = function() {
+            alert('11');
+            // 传统方式删除事件
+            divs[0].onclick = null;
+        }
+        // 方法监听注册方式删除事件
+        divs[1].addEventListener('click', fn); // 里面的fn不需要调用加小括号
+        function fn() {
+            alert('666');
+            divs[1].removeEventListener('click', fn);
+        }
+
+        divs[2].attachEvent('onclick', fn1);
+        function fn1() {
+            alert('888');
+            divs[2].detachEvent('onclick', fn1);
+        }
+    </script>
+</body>
+</html>
