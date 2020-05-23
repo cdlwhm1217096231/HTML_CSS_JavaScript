@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/angel.gif" alt="">
+    <script>
+        var pic = document.querySelector('img');
+        // 1.鼠标不断移动，使用鼠标移动事件mousemove
+        // 2.在页面中移动，给document注册事件
+        // 3.图片要移动距离，而且不占位置，因此使用绝对定位
+        // 4.核心原理：每次鼠标移动，都会获得最新的鼠标坐标，把这个x和y坐标作为图片的top和left值就可以移动图片
+        document.addEventListener('mousemove', function (e) {
+            var x = e.pageX;
+            var y = e.pageY;
+            // 千万不要忘记给left和top添加px单位
+            pic.style.left = x - 50 + 'px';
+            pic.style.top = y - 40 + 'px';
+        })
+    </script>
+</body>
+
+</html>
