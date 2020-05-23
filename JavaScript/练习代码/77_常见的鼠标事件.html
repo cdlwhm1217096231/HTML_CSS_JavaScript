@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    我是一段不愿意被人分享的文字
+    <script>
+        // contextmenu可以禁用右键菜单
+        document.addEventListener('contextmenu', function(e){
+            e.preventDefault();
+        })
+        // 禁止选中文字selectstart
+        document.addEventListener('selectstart', function(e){
+            e.preventDefault();
+        })
+    </script>
+</body>
+</html>
