@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // window.onload传统注册事件方式
+       /*  window.onload = function () {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                alert('点击我');
+            });
+        }
+
+        window.onload = function () {
+            alert('666');
+        } */
+        window.addEventListener('load', function(){
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                alert('点击我');
+            });
+        });
+
+        window.addEventListener('load', function(){
+            alert('888');
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            alert('007');
+        })
+
+        // load等页面内容全部加载完成，包含页面dom元素、图片、flash css等
+        // DOMContentLoaded是DOM加载完成，不包含图片flash、css等就可以执行，加载速度比load快 
+    </script>
+</head>
+
+<body>
+    <button>点击</button>
+</body>
+
+</html>
