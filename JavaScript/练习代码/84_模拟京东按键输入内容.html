@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        // 核心思路：检测用户是否按下了s键，如果按下了s键，就把光标定位到搜索框中
+        // 使用键盘事件对象里面的keyCode判断用户按下的是否是s键
+        // 搜索框获得焦点：使用js中的focus()方法
+        var search = document.querySelector('input');
+        document.addEventListener('keyup', function(e){
+            if(e.keyCode == 83){
+                search.focus();
+            }
+        });
+    </script>
+</body>
+</html>
