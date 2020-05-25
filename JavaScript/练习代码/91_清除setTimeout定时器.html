@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击停止定时器</button>
+    <script>
+        var btn = document.querySelector('button');
+
+        var time = setTimeout(function(){
+            console.log('爆炸啦');
+        }, 5000);
+
+        btn.addEventListener('click', function(){
+            clearTimeout(time);
+        })
+    </script>
+</body>
+</html>
