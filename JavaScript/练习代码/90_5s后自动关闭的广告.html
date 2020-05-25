@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./images/ad.jpg" alt="" class="ad">
+    <script>
+        // 核心思路：5s后把这个广告隐藏起来
+        // 用定时器setTimeout()
+        var ad = document.querySelector('.ad');
+        setTimeout(function(){
+            ad.style.display = 'none';
+        }, 5000);
+    </script>
+</body>
+</html>
