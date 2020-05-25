@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.异步
+       /*  console.log(1);
+        setTimeout(function(){
+            console.log(3);
+        }, 1000);
+
+        console.log(2); */
+        // 2.第二个问题
+        // console.log(1);
+        // setTimeout(function(){
+        //     console.log(3);
+        // }, 0);
+        // console.log(2);
+
+        // 3.多个异步任务
+        console.log(1);
+        document.onclick = function(){
+            console.log('click');
+        };
+        console.log(2);
+        setTimeout(function(){
+            console.log(3);
+        }, 3000);
+    </script>
+</body>
+</html>
