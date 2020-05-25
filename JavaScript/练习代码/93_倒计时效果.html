@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 200px;
+        }
+
+        p {
+            float: left;
+        }
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p class=".jd">距离京东618开幕的时间：</p>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+
+    <script>
+        // 1.获取元素
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        var userInputTime = +new Date('2020-6-18 9:00:00'); // 返回用户输入的时间
+        countDown();  // 先调用这个函数，防止第一次刷新页面有空白
+        // 2.开启定时器
+        setInterval(countDown, 1000);
+
+        function countDown() {
+            var nowTime = +new Date(); // 返回的是当前时间总的毫秒数
+            var res = (userInputTime - nowTime) / 1000; // res就是剩余时间总的毫秒数
+            var h = parseInt(res / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h;
+
+            var m = parseInt(res / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+
+            var s = parseInt(res % 60);
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+        }
+    </script>
+</body>
+
+</html>
