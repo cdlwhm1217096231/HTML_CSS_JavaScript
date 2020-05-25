@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="index.html">
+        用户名：<input type="text" name="uname">
+        <input type="submit" value="登录">
+    </form>
+    <script>
+        // 第一个登录页面，里面有提交表单，action提交到index.html页面
+        // 第二个页面，可以使用第一个页面的参数，这样实现了一个数据在不同页面间的传递
+        // 第二个页面之所以可以使用第一个页面的数据，是利用url中的location.search参数
+        // 在第二个页面中，需要把这个参数提取出来
+        // 第一步去掉?利用substr
+        // 第二步利用=号分割键和值 split('=')
+    </script>
+</body>
+
+</html>
