@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function(){
+            // 记录浏览历史，所以可以实现后退功能
+            // location.assign('http://www.baidu.com');
+            // 不记录浏览历史，所以不可以实现后退功能
+            // location.replace('http://www.baidu.com');
+            // 重新刷新页面,加上true参数表示强制刷新
+            location.reload(true);
+        })
+    </script>
+</body>
+</html>
