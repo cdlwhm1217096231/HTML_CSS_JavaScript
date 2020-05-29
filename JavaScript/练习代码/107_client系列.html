@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 10px solid red;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        // client宽度
+        // 与offsetWidth最大的区别就是不包含边框
+        var div = document.querySelector('div');
+        console.log(div.clientWidth);
+        
+        
+    </script>
+</body>
+</html>
