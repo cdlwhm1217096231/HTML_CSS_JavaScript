@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 10px solid red;
+            padding: 10px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+        我是内容
+    </div>
+    <script>
+        // scroll系列
+        var div = document.querySelector('div');
+        console.log(div.scrollHeight);
+        console.log(div.clientHeight);
+        // scroll事件当滚动条发生变化会触发的事件
+        div.addEventListener('scroll', function(){
+            console.log(div.scrollTop);
+        })
+    </script>
+</body>
+</html>
