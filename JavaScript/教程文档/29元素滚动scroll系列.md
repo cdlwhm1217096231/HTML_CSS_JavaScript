@@ -36,6 +36,17 @@
   使用的时候getScroll().left
   ```
 
-#### 3.资料下载
+#### 3.三大系列总结
+![三大系列对比.png](https://upload-images.jianshu.io/upload_images/13407176-438417dc528b82dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![offset.png](https://upload-images.jianshu.io/upload_images/13407176-e0a23c6cea7f09cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![client.png](https://upload-images.jianshu.io/upload_images/13407176-ee4acba1f2a9e191.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![scroll.png](https://upload-images.jianshu.io/upload_images/13407176-29ffc48292a950ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+- 它们主要的用法：
+  - offset系列经常用于获得**元素**的位置offsetLeft、offsetTop；
+  - client经常用于获取元素大小clientWidth、clientHeight
+  - scroll经常用于获取滚动距离scrollTop、scrollLeft 
+- 注意：**页面滚动的距离通过window.pageXOffset**获得
+
+#### 4.资料下载
 
 - [笔记及代码，欢迎 star,follow,fork......](https://github.com/cdlwhm1217096231/HTML_CSS_JavaScript/tree/master/JavaScript)
