@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 元素一定要加定位 */
+            position: absolute;   
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        span {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 200px;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn500">点击关宏宇到500</button>
+    <button class="btn800">点击关宏宇到800</button>
+    <div></div>
+    <span>关宏宇</span>
+    <script>
+        // 简单动画函数封装,obj目标对象，target目标位置
+        // 给不同的元素指定不同的定时器
+        function animate(obj, target){
+            // 当我们不断的点击按钮，这个元素的速度会越来越快，因为开启了太多的定时器
+            // 解决方法：让我们的元素只有一个定时器执行。即先清除以前的定时器，只保留当前的一个定时器执行
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){
+            // 步长
+            // 把步长值改为整数，不要出现小数
+            var step = (target - obj.offsetLeft) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            if (obj.offsetLeft == target){
+                // 停止动画本质是停止定时器
+                clearInterval(obj.timer);
+            }
+
+            obj.style.left = obj.offsetLeft + step + 'px';
+        }, 15);
+        }
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+
+        // 调用函数
+        animate(div, 300);
+        // animate(span, 100);
+        btn500.addEventListener('click', function(){
+            animate(span, 500);
+        })
+
+        btn800.addEventListener('click', function(){
+            animate(span, 800);
+        })
+    </script>
+</body>
+</html>
