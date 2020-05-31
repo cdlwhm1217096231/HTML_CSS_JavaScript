@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 元素一定要加定位 */
+            position: absolute;   
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        span {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 200px;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <span>关宏宇</span>
+    <script>
+        // 简单动画函数封装,obj目标对象，target目标位置
+        function animate(obj, target){
+            var timer = setInterval(function(){
+            if (obj.offsetLeft >= target){
+                // 停止动画本质是停止定时器
+                clearInterval(timer);
+            }
+            obj.style.left = obj.offsetLeft + 1 + 'px';
+        }, 30);
+        }
+        var div = document.querySelector('div');
+        // 调用函数
+        animate(div, 300);
+
+        var span = document.querySelector('span');
+        animate(span, 100);
+    </script>
+</body>
+</html>
