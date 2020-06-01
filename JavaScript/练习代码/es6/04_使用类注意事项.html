@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        // 错误!
+        // var ldh = new Star('刘德华');
+        // ldh.sing();
+
+        var that;
+        var _that;
+       
+        class Star{
+            constructor(uname, age) {
+                this.uname = uname;
+                that = this;
+                // constuctor中的this指向的是创建出的实例对象
+                console.log(this);
+                this.age = age;
+                // this.sing();
+                this.btn = document.querySelector('button');
+                this.btn.onclick = this.sing; // sing后面不要加小括号
+            }
+            sing(){
+                // 这个sing方法中的this指向了btn这个按钮，因为这个按钮调用了这个函数
+                console.log(this);
+                
+                // console.log(uname);  错误
+                console.log(this.uname); // undefined
+                console.log(that.uname); // that存的是constructor中的this，刘德华
+            }
+
+            dance(){
+                _that = this; // 方法中的this指向的是实例对象ldh，因为ldh调用了这个方法
+                console.log(this);
+            }
+        }
+
+        var ldh = new Star('刘德华');
+        ldh.sing();
+
+        // 1.在ES6中没有类的变量提升，所以必须先定义类，才能通过类实例出对象；
+
+        // 2.类中的共有属性和方法一定要加this使用。
+
+        // 3.类中的this指向问题
+        console.log(that === ldh);
+        ldh.dance();
+        console.log(_that === ldh);
+        
+        
+    </script>
+</body>
+</html>
