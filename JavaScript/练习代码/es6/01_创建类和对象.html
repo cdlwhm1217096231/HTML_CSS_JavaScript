@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // 1.创建类class 
+        class Star {
+            // 构造函数
+            constructor(uname, age) {
+                this.uname  = uname;  
+                this.age = age;
+            }
+        }
+        // 2.利用类创建对象new
+        var me = new Star('CurryCoder', 18);
+        var zxy = new Star('张学友', 30);
+        console.log(me.uname);
+        console.log(zxy.uname);
+        console.log(zxy.age);
+        console.log(me);
+        
+        
+    </script>
+</body>
+</html>
