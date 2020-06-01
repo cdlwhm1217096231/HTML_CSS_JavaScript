@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.类的继承
+       /*  class Father{
+            constructor(){
+
+            }
+
+            money(){
+                console.log(100);
+            }
+        }
+        // 继承
+        class Son extends Father{
+
+        }
+
+        var son = new Son();
+        son.money();  */
+
+        /* class Father{
+            constructor(x, y){
+                this.x = x;
+                this.y = y;
+            }
+
+            sum(){
+                console.log(this.x + this.y);
+                
+            }
+        }
+
+        class Son extends Father{
+            constructor(x, y){
+                super(x, y);  // 调用了父类中的构造函数
+            }
+        }
+
+        var son = new Son(1, 2);
+        son.sum();
+
+        var son1 = new Son(11, 22);
+        son1.sum(); */
+
+        // // super关键字调用父类普通函数
+        // class Father{
+        //     say(){
+        //         return '我的爸爸';
+        //     }
+        // }
+
+        // class Son extends Father{
+        //     say(){
+        //         // return '我是儿子';
+        //         return super.say() + '的儿子';
+        //         // super.say()就是调用父类中的普通函数say()
+        //     }
+        // }
+
+        // var son = new Son();
+        // console.log(son.say());
+        
+        // 子类继承父类方法的同时扩展自己的方法
+        class Father{
+            constructor(x, y){
+                this.x = x;
+                this.y = y;
+            }
+            sum(){
+                console.log(this.x + this.y);
+            }
+        }
+
+        class Son extends Father{
+            constructor(x, y) {
+                // super必须在子类this之前调用!
+                super(x, y);
+                this.x = x;
+                this.y = y;
+                // 利用super调用父类的构造函数
+                
+            }
+            // 子类独有的方法
+            subtract(){
+                console.log(this.x - this.y);
+            }
+        }
+
+        var son = new Son(5, 4);
+        son.subtract();
+        son.sum();
+
+        
+    </script>
+</body>
+</html>
