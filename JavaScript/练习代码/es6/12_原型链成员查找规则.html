@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Star(uname, age){
+            this.uname = uname;
+            this.age = age;
+        }
+
+        Star.prototype.sing = function(){
+            console.log('我会唱歌');
+        }
+
+        Star.prototype.sex = 'man';
+        // Object.prototype.sex = 'male';
+
+
+        var ldh = new Star('刘德华', 18);
+        ldh.sex = '男';
+        console.log(ldh.sex);
+        console.log(ldh);   // 没有toString()方法
+        console.log(Star.prototype); // 没有toString()方法
+        console.log(Object.prototype);  // 具有toString()方法
+        console.log(ldh.toString());
+        
+    </script>
+</body>
+</html>
