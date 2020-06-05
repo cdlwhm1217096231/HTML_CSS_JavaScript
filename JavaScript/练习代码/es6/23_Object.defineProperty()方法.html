@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Object.defineProperty()方法用于定义新的属性或修改原来的属性
+        var obj = {
+            id: 1,
+            name: '小米',
+            price: 1999,
+            type: 'mi9'
+        };
+        // 以前对象添加和修改属性的方法
+        // obj.num = 10000;
+        // console.log(obj);
+        // obj.price = 99;
+        // Object.defineProperty()方法用于定义新的属性或修改原来的属性
+        Object.defineProperty(obj, 'price', {
+            value: 9.9
+        });
+        console.log(obj);
+
+        Object.defineProperty(obj, 'num', {
+            value: 10000, 
+            configurable: true
+        });
+
+        Object.defineProperty(obj, 'id', {
+            writable: false  // 不允许修改这个属性值
+        })
+        obj.id = 2;  // 无效修改
+        console.log(obj);
+
+        Object.defineProperty(obj, 'address', {
+            value: '地球村',
+            writable: false,  // 不允许修改这个属性值
+            enumerable: true,
+            configurable: false
+        })
+        var res = Object.keys(obj);
+        console.log(res);
+
+        delete obj.address;
+        console.log(obj);
+        
+        delete obj.num;
+        console.log(obj);
+        
+    </script>
+</body>
+
+</html>
