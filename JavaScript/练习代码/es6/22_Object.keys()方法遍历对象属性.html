@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Object.keys()用于获取对象自身所有的属性
+        var obj = {
+            name: '小米',
+            price: 1999,
+            type: 'mi9'
+        };
+        var arr = Object.keys(obj);
+        console.log(arr);
+        arr.forEach(function(value){
+            console.log(value);
+        })
+    </script>
+</body>
+</html>
