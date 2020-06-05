@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // some()方法：检测数组中的元素是否存在满足条件的元素
+        var arr = [10, 24, 5];
+        var flag = arr.some(function(value){
+            return value >= 20;
+        })
+        console.log(flag);
+        var arr1 = ['red', 'pink', 'blue'];
+        var flag1 = arr1.some(function(value){
+            return value === 'yellow';
+        })
+        console.log(flag1);
+        
+    </script>
+</body>
+</html>
