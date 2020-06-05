@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 借用父类构造函数继承父类的属性
+        // 1.父构造函数
+        function Father(uname, age){
+            // this指向父构造函数的对象实例
+            this.uname = uname;
+            this.age = age;
+        }
+        // 子构造函数
+        function Son(uname, age, score){
+            // this指向子构造函数的对象实例
+            Father.call(this, uname, age);  // 注意这句话!
+            this.score = score;
+        }
+
+        var son  = new Son('刘德华', 18, 100);
+        console.log(son);
+        
+       
+    </script>
+</body>
+</html>
