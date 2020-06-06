@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <script>
+        // 改变函数内部this指向，js提供了三种方法bind() call() apply()
+
+        // 1.call()
+        var o = {
+            name: '马云'
+        }
+
+        function fn(a, b) {
+            console.log(this);
+            console.log(a + b);
+        }
+        // call()方法调用函数和改变函数内部的this指向
+        fn.call(o, 1, 2);
+        // call()的主要方法是可以实现继承
+        function Father(uname, age, sex) {
+            this.uname = uname;
+            this.age = age;
+            this.sex = sex;
+        }
+
+        function Son(uname, age, sex) {
+            Father.call(this, uname, age, sex);
+        }
+        var son = new Son('马云', 18, '男');
+        console.log(son);
+
+        // 2.apply()
+        var o = {
+            name: 'CurryCoder'
+        }
+
+        function fn(arr) {
+            console.log(this);
+            console.log(arr);
+        }
+        // apply()方法可以调用函数，也可以改变函数内部的this指向
+        // 但是，apply()的参数必须以数组形式传递
+        fn.apply(o, ['red']);
+        // apply()的主要应用
+        var arr = [1, 88, 23, 9, 0];
+        // var max = Math.max.apply(null, arr);
+        var max = Math.max.apply(Math, arr);
+        console.log(max);
+
+        // 3.bind()方法
+        var obj = {
+            name: 'Curry'
+        }
+
+        function func(a, b) {
+            console.log(this);
+            console.log(a + b);
+        }
+        // 不会调用原来的函数，可以改变原来函数内部的this指向
+        // 返回的是原函数改变this之后产生的新函数
+        var f = func.bind(obj, 1, 2);
+        f();
+
+        // bind()方法的应用：如果有的函数我们不需要立即调用，但是又想改变这个函数内部的this指向此时用bind()
+        // 应用场景举例：我们有一个按钮，当我们点击之后，就禁用这个按钮，3s后开启这个按钮
+        var btns = document.querySelectorAll('button');
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                this.disabled = true; // 这个this指向的是btn这个按钮
+                var that = this;
+
+                setTimeout(function () {
+                    // this.disabled = false;错误! 定时器函数里面的this指向的是window
+                    // that.disabled = false;正确
+                    this.disabled = false; // 定时器函数里面的this指向的是btn这个对象
+                }.bind(this), 3000) // 这个this指向的是btn这个对象
+            }
+        }
+    </script>
+</body>
+
+</html>
