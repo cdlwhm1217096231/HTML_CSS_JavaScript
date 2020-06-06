@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 函数的调用方式
+        // 1.普通函数
+        function fn() {
+            console.log('CurryCoder');
+        }
+        fn(); 
+        fn.call();
+
+        // 2.对象的方法
+        var o = {
+            sayHi: function () {
+                console.log('CurryCoder');
+            }
+        }
+        o.sayHi();
+        // 3.构造函数
+        function Star(){
+        }
+        var s = new Star();
+        // 4.绑定事件函数
+        btn.onclick = function(){}; // 点击了按钮btn就调用了这个函数
+        // 5.定时器函数
+        setInterval(function(){}, 1000); // 这个函数是定时器自动1s调用一次
+        // 6.立即执行函数
+        (function(){  // 立即执行函数是自动调用，立即执行
+            console.log('CurryCoder');
+        })()
+
+
+    </script>
+</body>
+
+</html>
