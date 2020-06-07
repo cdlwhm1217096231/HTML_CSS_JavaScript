@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>榴莲</li>
+        <li>臭豆腐</li>
+        <li>鲱鱼罐头</li>
+        <li>大猪蹄子</li>
+    </ul>
+    <script>
+        // 闭包应用-3s后，打印所有li元素的内容
+        var lis = document.querySelector('.nav').querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++) {
+            (function (i) {
+                setTimeout(function () {
+                    console.log(lis[i].innerHTML);
+                }, 3000);
+            })(i)
+        }
+    </script>
+</body>
+
+</html>
