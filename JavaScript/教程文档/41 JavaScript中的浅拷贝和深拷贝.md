@@ -1,0 +1,72 @@
+### 技术交流QQ群:1027579432，欢迎你的加入！
+### 欢迎关注我的微信公众号：CurryCoder的程序人生
+
+#### 1.浅拷贝与深拷贝
+- 浅拷贝只是拷贝一层，更深层次对象级别的只拷贝引用。
+- 深拷贝拷贝多层，每一级别的数据都会被拷贝。
+- Object.assign(target,sources)，es6新增方法可以实现浅拷贝。
+    ```javascript
+    <script>
+        var obj = {
+            id: 1,
+            name: 'CurryCoder',
+            msg: { // 更深层次的对象
+                age: 18,
+                address: 'earth'
+            },
+            color: ['pink', 'red']
+        };
+        //    浅拷贝
+        var o = {};
+        for (var k in obj) {
+            o[k] = obj[k]; // 浅拷贝只拷贝一层，更深层次对象级别的只拷贝引用。如只拷贝obj中msg的引用
+        }
+        console.log(o);
+        o.msg.age = 30;
+        console.log(obj);
+        console.log('-------以下是ES6新增的浅拷贝方法--------');
+        Object.assign(o, obj);
+        console.log(o);
+        o.msg.age = 60;
+        console.log(obj);
+
+        // 深拷贝
+        var oldobj = {
+            id: 1,
+            name: 'CurryCoder',
+            msg: { // 更深层次的对象
+                age: 18,
+                address: 'earth'
+            },
+            color: ['pink', 'red']
+        };
+
+        var res = {};
+        function deepCopy(target, sources) {
+            for (var k in sources) {
+                // 判断sources[k]属于哪种数据类型
+                var item = sources[k];
+                // 判断是否是数组
+                if (item instanceof Array) {
+                    target[k] = [];
+                    deepCopy(target[k], item);
+                    // 判断是否是对象
+                } else if (item instanceof Object) {
+                    target[k] = {};
+                    deepCopy(target[k], item);
+                    // 判断是否是简单数据类型
+                } else {
+                    target[k] = item;
+                }
+            }
+        }
+        console.log('------深拷贝-------');
+        deepCopy(res, oldobj);
+        console.log(res);
+        res.msg.age = 44;
+        console.log(oldobj);
+    </script>
+    ```
+
+#### 2.资料下载
+- [笔记及代码，欢迎 star,follow,fork......](https://github.com/cdlwhm1217096231/HTML_CSS_JavaScript/tree/master/JavaScript)
