@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var data = [{
+            id: 1,
+            name: '家电',
+            goods: [{
+                id: 11,
+                gname: '冰箱',
+                goods: [{
+                    id: 111,
+                    gname: '海尔'
+                }, {
+                    id: 112,
+                    gname: '美的'
+                }]
+            }, {
+                id: 12,
+                gname: '洗衣机'
+            }]
+        }, {
+            id: 2,
+            name: '服饰'
+        }];
+        // 输入id号，就可以返回数据对象
+        // 利用forEach遍历数组中的每一个对象
+        function getID(json, id) {
+            var res = {};
+            json.forEach(function (item) {
+                // console.log(item); // 2个数组元素
+                if (item.id == id) {
+                    // console.log(item);
+                    res = item;
+                    return item;
+                    // 想要得到里面的数据11和12，可以利用递归函数
+                } else if (item.goods && item.goods.length > 0) {
+                    res = getID(item.goods, id);
+                }
+            })
+            return res;
+        }
+        console.log(getID(data, 1));
+        console.log(getID(data, 12));
+        console.log(getID(data, 111));
+    </script>
+</body>
+
+</html>
