@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <script>
+        $(function(){
+            // 隐式迭代
+            $('button').click(function(){
+                // 当前元素添加背景颜色
+                $(this).css("background", "red");
+                // 其余兄弟去掉背景颜色  隐式迭代
+                $(this).siblings("button").css("background", "");
+            })
+        })
+    </script>
+</body>
+</html>
