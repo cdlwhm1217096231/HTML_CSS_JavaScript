@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div>我是div</div>
+    <div class="nav">我是nav</div>
+    <p>我是p</p>
+
+    <ol>
+        <li>我是ol的</li>
+        <li>我是ol的</li>
+        <li>我是ol的</li>
+        <li>我是ol的</li>
+    </ol>
+    
+    <ul>
+        <li>我是ul的</li>
+        <li>我是ul的</li>
+        <li>我是ul的</li>
+        <li>我是ul的</li>
+    </ul>
+    <script>
+        $(function(){
+            console.log( $('.nav'));  // 基础选择器
+            console.log($('ul li'));  // 层级选择器
+        })
+    </script>
+</body>
+
+</html>
