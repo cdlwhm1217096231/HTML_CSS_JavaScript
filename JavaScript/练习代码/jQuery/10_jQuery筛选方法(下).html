@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <ol>
+        <li>我是ol中的li</li>
+        <li>我是ol中的li</li>
+        <li class="item">我是ol中的li</li>
+        <li>我是ol中的li</li>
+        <li>我是ol中的li</li>
+        <li>我是ol中的li</li>
+    </ol>
+
+    <ul>
+        <li>我是ul中的li</li>
+        <li>我是ul中的li</li>
+        <li>我是ul中的li</li>
+        <li>我是ul中的li</li>
+        <li>我是ul中的li</li>
+        <li>我是ul中的li</li>
+    </ul>
+    <div class="current">我有current</div>
+    <div>我没有current</div>
+
+    <script>
+        $(function(){
+            // 兄siblings()
+            $('ol .item').siblings("li").css("color", "red");
+            // 选择第n个元素
+            $('ul li:eq(2)').css("color", "blue");
+            $('ul li').eq(4).css("color", 'red');  // 推荐方法
+
+            // 判断是否含有某个类名
+            var flag = $("div:first").hasClass("current");
+            console.log(flag);
+        })
+    </script>
+</body>
+</html>
