@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        // 操作样式之css方法
+        $(function(){
+            var w = $('div').css("width");
+            console.log(w);
+            $('div').css("width", "300px");
+            // $('div').css(height, "300px");  错误的，属性名必须加引号
+            $('div').css("height", 300);
+
+            $('div').css({"width": "400px", "height": "400px"});
+
+            $('div').css({
+                width: 400, 
+                height: 400,
+                backgroundColor: "red"
+                });
+        })
+    </script>
+</body>
+</html>
