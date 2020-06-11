@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        .one {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transition: all .3s;
+        }
+
+        .two {
+            transform: rotate(720deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="one two"></div>
+    <script>
+        // 原生js
+        // var one = document.querySelector('.one');
+        // one.className = "two";
+
+        // jQuery类操作
+        $(function(){
+            $('.one').addClass('two');
+            $('.one').removeClass('two');
+        })
+
+
+    </script>
+</body>
+</html>
