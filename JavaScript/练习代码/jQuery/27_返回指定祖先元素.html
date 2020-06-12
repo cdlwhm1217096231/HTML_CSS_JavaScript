@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div class="one">
+        <div class="two">
+            <div class="three">
+                <div class="four">我不容易</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // parents("选择器")
+        $(function(){
+            var one = $(".four").parents(".one");
+            console.log(one);
+        })
+    </script>
+</body>
+</html>
