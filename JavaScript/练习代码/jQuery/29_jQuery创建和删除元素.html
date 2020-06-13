@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>原先的li</li>
+    </ul>
+
+    <div class="test">我是原先的div</div>
+    <script>
+        $(function(){
+            // 1.创建元素
+            var li = $("<li>我是后来创建的小li</li>");
+            // 2.添加元素
+            // 内部添加，并且放在内容的最后面
+            // $("ul").append(li);
+            // 内部添加，并且放在内容的最前面
+            $("ul").prepend(li);
+
+            // 外部添加
+            var div = $("<div>我是后来创建的div</div>");
+            $(".test").after(div);  // 把内容放入目标元素后面
+            $(".test").before(div);  // 把内容放入目标元素前面
+
+            // 3.删除元素
+            $("ul").remove();  // 删除匹配的元素
+            $("ul").empty();   // 删除匹配元素的子节点
+            $("ul").html("");  // 清空元素里面的内容
+        })
+    </script>
+</body>
+</html>
