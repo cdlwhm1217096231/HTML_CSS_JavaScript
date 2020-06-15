@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .current {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <ul>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+    </ul>
+    <ol></ol>
+    <script>
+        $(function(){
+            // 1.单个事件注册
+          /*   $("div").click(function(){
+                $(this).css("background", "blue");
+            });
+
+            $("div").mouseover(function(){
+                $(this).css("background", "red");
+            }); */
+
+            // 2.事件处理on()
+            // (1)on可以绑定1个或多个事件处理程序
+         /*    $("div").on({
+                mouseenter: function(){
+                    $(this).css("background", 'blue');
+                },
+                click: function(){
+                    $(this).css("background", "red");
+                },
+                mouseleave: function(){
+                    $(this).css("background", "purple");
+                }
+            }); */
+            // 如果事件处理程序相同，可合并在一起书写
+            $("div").on("mouseenter mouseleave", function(){
+                $(this).toggleClass("current");
+            });
+
+            // (2)on可以实现事件委托(委派)
+            // $("ul li").click();
+            $("ul").on("click", "li", function(){
+                alert(11);
+            }); // click是绑定在ul身上，但是事件的触发者是ul的子元素li
+
+            // (3)on()可以给动态生成的元素绑定事件
+           /*  $("ol li").click(function(){
+                alert(11);
+            })
+            */
+            var li = $("<li>我是后来创建的小li</li>");
+            $("ol").append(li);
+
+            $("ol").on("click", "li", function(){
+                alert(123);
+            })
+        })
+    </script>
+</body>
+</html>
