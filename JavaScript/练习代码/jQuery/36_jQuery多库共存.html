@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div></div>
+    <span></span>
+    <script>
+        $(function(){
+            function $(e){
+                return document.querySelector(e);
+            }
+            console.log( $("div"));
+        //    $.each();  与jQuery冲突了
+            // 如果是$冲突了，可以使用jQuery
+            jQuery.each();
+            // 让jQuery释放对$控制权，让用户自己决定
+            var fine = jQuery.noConflict();
+            console.log(fine("span"));
+            fine.each();
+        })
+    </script>
+</body>
+</html>
