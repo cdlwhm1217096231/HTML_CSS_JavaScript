@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    
+    <script>
+        $(function(){
+            // var targetObj = {};
+            // var srcObj = {
+            //     id: 1,
+            //     name: "CurryCoder"
+            // }
+            // $.extend(targetObj, srcObj);
+            // console.log(targetObj);
+
+            // var targetObj = {
+            //     id: 999
+            // }
+
+            // var srcObj = {
+            //     id: 2,
+            //     name: "CurryCoder"
+            // }
+            // $.extend(targetObj, srcObj); // 会覆盖targetObj原来的数据
+            // console.log(targetObj); 
+            
+            var targetObj = {
+                id: 9999,
+                msg: {
+                    sex: "男"
+                }
+            };
+            var srcObj = {
+                id: 1,
+                name: "CurryCoder",
+                msg: {
+                    age: 18,
+                    address: "Beijing"
+                }
+            }
+            // $.extend(targetObj, srcObj);  // 会覆盖targetObj原来的数据
+            // console.log(targetObj);
+            // 浅拷贝
+            // targetObj.msg.age = 20;
+            // console.log(srcObj);
+            // console.log(targetObj);
+
+            // 深拷贝
+            $.extend(true, targetObj, srcObj);
+            targetObj.msg.age = 30;
+            console.log(targetObj);
+            console.log(srcObj);
+        })
+    </script>
+</body>
+</html>
