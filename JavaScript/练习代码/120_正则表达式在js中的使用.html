@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.利用RegExp对象来创建正则表达式
+        var regexp = new RegExp(/123/);
+        console.log(regexp);
+        
+        // 2.利用字面量创建正则表达式
+        var rg = /123/;
+        console.log(rg);
+        
+        // 3.测试字符串是否符合正则表达式test()
+        console.log(rg.test(123));  // true
+        console.log(rg.test("CurryCoder"));  // false
+
+        
+    </script>
+</body>
+</html>
