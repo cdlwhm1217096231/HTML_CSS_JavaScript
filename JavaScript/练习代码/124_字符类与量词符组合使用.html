@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var reg = /^[a-zA-Z0-9_-]$/;
+        console.log(reg.test('a'));
+        console.log(reg.test('aa'));
+        console.log(reg.test('8'));
+        console.log(reg.test('18'));
+        console.log('----------------');
+        
+        var reg1 = /^[a-zA-Z0-9_-]{6,26}$/; // {6,26}中间不能有空格
+        console.log(reg1.test('currycoder007'));
+        console.log(reg1.test('currycoder_red'));
+        console.log(reg1.test('currycoder-red'));
+        console.log(reg1.test('currycoder-red-007'));
+        console.log(reg1.test('currycoder!red'));
+        
+    </script>
+</body>
+</html>
