@@ -7,3 +7,10 @@
 - jQuery插件常用网站：
     - jQuery插件库：http://www.jq22.com/
     - jQuery之家[推荐]: http://www.htmleaf.com/
+
+#### 2.jQuery插件之图片懒加载
+- 图片懒加载：图片使用延迟加载，可提高网页下载速度，它也能帮助减轻服务器负载。当我们页面滑动到可视区域，才显示图片。
+- 我们使用jQuery插件库EasyLazyload。注意：**此时的js引入文件和js调用必须写到DOM元素(图片)最后面**。
+
+#### 3.资料下载
+- [笔记及代码，欢迎 star,follow,fork......](https://github.com/cdlwhm1217096231/HTML_CSS_JavaScript/tree/master/JavaScript)
