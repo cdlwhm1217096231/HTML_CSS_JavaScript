@@ -35,8 +35,6 @@
     - 就是检测str文本是否符合我们写的正则表达式规范；
 
 #### 4.正则表达式中的特殊字符
-
-##### 4.1 正则表达式的组成
 - **一个正则表达式可以由简单的字符构成**。如/abc/、/123/，**也可以是简单和特殊字符的组合**，比如/ab\*c/。其中，**特殊字符也被称为元字符**，在正则表达式中具有**特殊**意义的专用**符号**，如^、$、+、\*等。
 - 正则表达式中的特殊字符：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions
 - 正则表达式测试工具：https://tool.oschina.net/regex
@@ -124,3 +122,47 @@
     console.log(reg6.test('aaaaa'));
     console.log('-------------------------');
     ```
+- 括号总结：
+    - 大括号{}：量词符。里面表示重复次数
+    - 中括号[]：字符集合。匹配方括号中的任意字符
+    - 小括号()：表示优先级
+    ```javascript
+    // 中括号：字符集合,匹配方括号中的任意字符
+    var reg = /^[abc]$/; // 多选一 a或b或c
+
+    // 大括号：量词符，里面表示重复次数
+    var reg1 = /^a{3}$/;  // 只能匹配aaa
+    console.log(reg1.test('aaa'));
+    var reg2 = /^abc{3}$/;  // 只能匹配abccc
+    console.log(reg2.test('abccc'));  // true
+    console.log(reg2.test('abcabcabc'));  // false
+
+    // 小括号()：表示优先级
+    var reg3 = /^(abc){3}$/;  // 只能匹配abcabcabc
+    console.log(reg3.test('abcabcabc'));
+    ```
+- 正则表达式在线测试网站：https://c.runoob.com/
+
+#### 5.预定义类
+- 预定义类指的是**某些常见模式的简写方式**。
+![预定义类.png](https://upload-images.jianshu.io/upload_images/13407176-1f5a9fadfa1d93ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+#### 6.正则表达式中的替换
+- replace替换：replace()方法可以实现替换字符串操作，用来替换的参数可以是一个字符串或者是一个正则表达式。语法格式如下：
+    ```
+    stringObject.replace(regexp/substr，replacement)
+    ```
+    - 第一个参数：被替换的字符串或者正则表达式
+    - 第二个参数：替换为的目标字符串
+    - 返回值是一个替换完毕的新字符串
+- 正则表达式参数
+    ```
+    /表达式/[switch]
+    ```
+    - switch(也称为修饰符)：按照什么样的模式来匹配，有三种值。
+        - g: 全局匹配
+        - i: 忽略大小写
+        - gi: 全局匹配 + 忽略大小写
+        
+#### 7.资料下载
+- [笔记及代码，欢迎 star,follow,fork......](https://github.com/cdlwhm1217096231/HTML_CSS_JavaScript/tree/master/JavaScript)
