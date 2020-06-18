@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 中括号：字符集合,匹配方括号中的任意字符
+        var reg = /^[abc]$/; // 多选一 a或b或c
+        
+        // 大括号：量词符，里面表示重复次数
+        var reg1 = /^a{3}$/;  // 只能匹配aaa
+        console.log(reg1.test('aaa'));
+        var reg2 = /^abc{3}$/;  // 只能匹配abccc
+        console.log(reg2.test('abccc'));  // true
+        console.log(reg2.test('abcabcabc'));  // false
+
+        // 小括号()：表示优先级
+        var reg3 = /^(abc){3}$/;  // 只能匹配abcabcabc
+        console.log(reg3.test('abcabcabc'));
+        
+
+    </script>
+</body>
+</html>
