@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 座机号码验证：全国座机号码 两种格式： 010-12345678 或者 0564-1234567
+        var reg = /^(\d+)-(\d+)$/;
+        console.log(reg.test('010-12345678'));
+        console.log(reg.test('0564-8535110'));
+        console.log('-----------------------');
+        // 正则表达式中的或者符号 |
+        var reg1 = /^\d{3}-\d{8}|\d{4}-\d{7}$/;
+        console.log(reg1.test('010-12345678'));
+        console.log(reg1.test('0564-8535110'));
+        console.log('-----------------------');
+        
+        var reg2 = /^\d{3,4}-\d{7,8}$/;
+        console.log(reg2.test('010-12345678'));
+        console.log(reg2.test('0564-8535110'));
+    </script>
+</body>
+</html>
