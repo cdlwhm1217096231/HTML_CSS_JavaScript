@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+            width: 300px;
+            height: 100px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id="message" cols="30" rows="10"></textarea>
+    <button>提交</button>
+    <div></div>
+    <script>
+        // 替换replace
+        var src = "Curry和Coder";
+        var target = src.replace("Curry", "pink");
+        var target = src.replace(/Curry/, "pink");
+        console.log(target);
+
+        var text = document.querySelector("textarea");
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.onclick = function(){
+            div.innerHTML = text.value.replace(/激情|垃圾/g, '**');
+        }
+    </script>
+</body>
+
+</html>
