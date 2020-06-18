@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*  if(true) {  
+            // let关键字声明的变量具有块级作用域{}
+            let a = 10;  
+            let b = 20;
+            console.log(b);
+            if (true) {
+                let c = 30;   
+            }
+            console.log(c);  // c is not defined
+            
+        }
+        console.log(a);  // a is not defined
+        console.log(b);  // b is not defined */
+        console.log('-------------------------');
+        // 在一个大括号{}中，使用let关键字声明的变量才具有块级作用域，var关键字声明的变量不具有块级作用域
+        if (true) {
+            let num = 100;
+            var abc = 10000;
+        }
+        console.log(abc); // 10000
+        // console.log(num);  // num is not defined
+        console.log('-------------------------');
+
+
+        // let关键字声明的变量具有块级作用域{}，防止循环变量变成全局变量
+        for (var i = 0; i < 2; i++) {
+
+        }
+        console.log(i); // 2
+
+        for (let i = 0; i < 2; i++) {
+
+        }
+        console.log(i); // i is not defined
+
+    </script>
+</body>
+
+</html>
