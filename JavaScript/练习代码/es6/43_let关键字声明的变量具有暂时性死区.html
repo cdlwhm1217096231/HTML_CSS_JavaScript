@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let关键字声明的变量具有暂时性死区特性
+        // /* var tmp = 123;
+        // if(true){
+        //     tmp = 'abc';  // 暂时性死区特性：此处的tmp并不等于全局变量tmp=123。因此，会报错Uncaught ReferenceError: Cannot access 'tmp' before initialization
+        //     let tmp;
+        // } */
+
+        var num = 10;
+        if (true) {
+            console.log(num);  // Uncaught ReferenceError: Cannot access 'num' before initialization
+            let num = 20;
+        }
+        
+    </script>
+</body>
+</html>
