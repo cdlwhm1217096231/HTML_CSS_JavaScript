@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 使用let关键字声明的变量不存在变量提升(必须先声明再使用)
+        console.log(aaa);  // undefined
+        var aaa = 34;
+
+        console.log(a);  // Uncaught ReferenceError: Cannot access 'a' before initialization
+        let a = 20;  
+        
+    </script>
+</body>
+</html>
