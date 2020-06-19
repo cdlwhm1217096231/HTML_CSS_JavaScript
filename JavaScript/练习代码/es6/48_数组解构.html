@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组解构：允许我们按照一一对应的关系从数组中提取值，然后将值赋值给变量。
+        let arr = [1, 10, 100];
+        let [a, b, c] = arr;  // [a, b, c]不是一个数组，它表示解构
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log('----------------------');
+        // 如果解构不成功，变量的值为undefined
+        let arr1 = [1, 11, 111];
+        let [aa, bb, cc, dd, ee] = arr1;
+        console.log(aa); // 1
+        console.log(bb);  // 11
+        console.log(cc);  // 1111
+        console.log(dd);  // undefined
+        console.log(ee);  // undefined
+        
+        
+        
+        
+        
+        
+
+        
+    </script>
+</body>
+</html>
