@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 箭头函数: 用来简化函数定义语法的
+        const fn = () => {
+            console.log(123);
+        }
+        // 调用箭头函数
+        fn();
+
+        // 箭头函数特点1：当函数体中只有一句代码，且代码的执行结果就是返回值。此时，可以省略大括号
+        const fun = (num1, num2) => num1 + num2;
+        console.log(fun(11, 100));
+        
+        // 箭头函数特点2：如果箭头函数的形参只有一个，可以省略小括号
+        const f1 = n => {
+            console.log('只有一个形参的箭头函数');
+            console.log(n);
+        }
+        f1(666);
+    </script>
+</body>
+</html>
