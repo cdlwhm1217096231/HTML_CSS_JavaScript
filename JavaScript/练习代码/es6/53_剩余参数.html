@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 剩余参数
+        const fn = (first, ...args) => {
+            console.log(first);  // 10
+            console.log(args); // [20, 30]
+        };
+
+        fn(10, 20, 30);
+
+        // 在箭头函数中无法使用数组的arguments传递参数
+        const sum = (...args) => {
+            let total = 0;
+            args.forEach(item => total += item);
+            return total;
+        };
+        console.log(sum(1, 11));
+        console.log(sum(1, 11, 111));
+        
+    </script>
+</body>
+</html>
