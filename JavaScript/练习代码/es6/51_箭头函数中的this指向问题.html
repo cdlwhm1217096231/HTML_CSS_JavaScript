@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 箭头函数中的this指向问题**：箭头函数不绑定this关键字，箭头函数没有自己的this关键字，如果在箭头函数中使用this，this将指向箭头函数定义位置中的this
+        const obj = {
+            name: "CurryCoder",
+            age: 18
+        };
+
+        function fn(){
+            console.log(this);  // obj
+            return () => {
+                console.log(this); // obj
+            }
+        }
+
+        const resFn = fn.call(obj);
+        resFn();
+    </script>
+</body>
+</html>
