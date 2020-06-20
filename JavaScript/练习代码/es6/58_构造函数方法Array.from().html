@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let arr = {  // arr是伪数组
+            '0': 'one',
+            '1': 'two',
+            '2': 'three',
+            'length': 3
+        };
+        let arr1 = Array.from(arr);   // arr1是真正的数组
+        console.log(arr1);  // ["one", "two", "three"]
+        
+        // Array.from()方法还可以接收第二个参数(是一个函数)，作用类似于数组的map方法，用来对每个元素进行处理，将处理后的值放入返回的数组。
+        let oldArr = {
+            '0': '0',
+            '1': '1',
+            '2': '2',
+            'length': 3
+        }
+        let newArr = Array.from(oldArr, item => item * 2);
+        console.log(newArr);  // [0, 2, 4]
+        
+    </script>
+</body>
+</html>
