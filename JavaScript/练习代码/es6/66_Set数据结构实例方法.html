@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const s = new Set();
+        s.add(1).add(2).add(3);  // 向set结构中添加值
+        console.log(s.size);
+        
+        const result = s.delete(2);  // 删除set结构中的2
+        console.log(result); // true
+        
+        console.log(s.size);
+
+        const res = s.has(1);  // set结构中是否有1这个值，返回布尔值
+        console.log(res);
+        
+        s.clear();   // 清除set结构中的所有值
+        console.log(s.size);
+        
+    </script>
+</body>
+</html>
