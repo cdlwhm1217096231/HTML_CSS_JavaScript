@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let oldArr = [{
+            id: 1,
+            name: "CurryCoder"
+        },
+        {
+            id: 2,
+            name: "Durant"
+        }];
+        let target = oldArr.find((item, index) => item.id == 2);
+        console.log(target); // id==3不存在，返回undefined
+        // 结果如下所示：
+      /*   {
+            id: 2,
+            name: "Durant"
+        } */
+        
+    </script>
+</body>
+</html>
