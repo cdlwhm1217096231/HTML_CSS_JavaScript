@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Set本身是一个构造函数，用来生成Set数据结构
+        const s = new Set();
+        console.log(s.size); // 0
+        
+        // Set函数可以接收一个数组作为参数，用来初始化
+        // 数组去重
+        const set = new Set([1, 2, 3, 4, 4, 4, 5, 6]);
+        console.log(set.size); // 6
+        const arr = [...set];
+        console.log(arr);  // [1, 2, 3, 4, 5, 6]
+        
+    </script>
+</body>
+</html>
