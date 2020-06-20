@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 实例方法findeIndex():用于找出第一个符合条件的数组成员的位置，如果没有找到返回-1
+        let arr = [1, 5, 30, 96];
+        let index = arr.findIndex((value, index) => value > 5);
+        console.log(index); // 2
+
+        let index1 = arr.findIndex((value, index) => value > 555);
+        console.log(index1);  // -1
+    </script>
+</body>
+</html>
