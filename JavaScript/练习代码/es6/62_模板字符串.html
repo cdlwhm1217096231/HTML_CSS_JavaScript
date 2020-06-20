@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = `CurryCoder`;  // 模板字符串用``包裹
+        console.log(name);
+        
+        // 模板字符串中可以解析变量，不需要字符串拼接操作
+        let sayHi = `Hi, my name is ${name}`; 
+        console.log(sayHi);   // Hi, my name is CurryCoder
+        
+        // 模板字符串中也可以换行
+        let result = {
+            name: 'CurryCoder',
+            age: 18,
+            sex: 'male'
+        }
+        let html = `
+        <div>
+            <span>${result.name}</span>
+            <span>${result.age}</span>
+            <span>${result.sex}</span>
+        </div>`;
+
+        // 模板字符串中也可以调用函数
+        const sayHello = () => {
+            return 'Hello World!';
+        };
+        let greet = `${sayHello()} 模板字符串中可以调用函数sayHello啦~`;
+        console.log(greet);
+    </script>
+</body>
+</html>
