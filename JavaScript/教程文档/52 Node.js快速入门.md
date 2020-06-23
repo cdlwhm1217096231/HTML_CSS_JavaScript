@@ -1,4 +1,4 @@
-### 技术交流QQ群:1027579432，欢迎你的加入！
+﻿### 技术交流QQ群:1027579432，欢迎你的加入！
 ### 欢迎关注我的微信公众号：CurryCoder的程序人生
 
 #### 1.Node开发概述
@@ -243,7 +243,7 @@ E:\前端开发\JavaScript\练习代码\Node.js>node 03_module.exports.b.js
     ```javascript
     path.join('路径','路径',...)
     ```
-- - **路径拼接示例**
+- **路径拼接示例**
     ```javascript
     // public/uploads/avatar
     // 导入系统模块path
