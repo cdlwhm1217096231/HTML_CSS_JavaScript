@@ -176,3 +176,89 @@
     [16:17:59] Finished 'copy' after 41 ms
     [16:17:59] Finished 'default' after 47 ms
     ```
+
+#### 4.package.json文件
+
+##### 4.1 node_modules文件夹的问题
+- 问题1：文件夹以及文件过多、过碎，当我们将项目整体拷贝给别人时，传输的速度会很慢很慢。
+- 问题2：复杂的模块依赖关系需要被记录，确保模块的版本和当前保持一致。否则，会导致当前项目运行报错。
+
+##### 4.2 package.json文件的作用
+- 项目的描述文件，记录了当前项目信息。例如项目名称、版本、作者、github地址、当前项目依赖了哪些第三方模块等。**使用npm init -y命令生成package.json文件**。 生成的package.json文件内容如下所示：
+    ```javascript
+    {
+    "name": "description",
+    "version": "1.0.0",
+    "description": "",
+    <!-- 主模块 -->
+    "main": "index.js",
+    <!-- 命令别名 -->
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "nodemon app.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+    }
+    <!-- 记录项目的依赖模块 -->
+    "dependencies": {
+    "formidable": "^1.2.2",
+    "mime": "^2.4.6"
+    }
+    ```
+- **命令别名的使用**：当命令很长、很复杂时，直接输入整个命令容易出错。因此，使用npm run build简化命令nodemon app.js的运行。 
+- **问题1的解决**：当项目复制给别人时，并不需要拷贝node_modules文件夹。只需要将项目中的package.json文件拷贝给别人就行，别人在命令行中输入npm install即可根据package.json文件安装项目所依赖的第三方模块，生成node_modules文件夹。
+
+##### 4.3 项目依赖
+- 在项目的开发阶段和线上运营阶段，都需要依赖的第三方模块，称为项目依赖。**安装时，使用npm install命令，这样会将项目依赖和开发依赖全部都安装好**。
+- 使用**npm install 第三方模块名**命令下载的文件会默认被添加到package.json文件的dependencies字段中。
+    ```
+    {
+        "dependencies": {
+            "jquery": "^3.3.1"
+        }
+    }
+    ```
+
+##### 4.4 开发依赖
+- 在项目的开发阶段需要依赖，线上运营阶段不需要依赖的第三方模块，称为开发依赖。**安装时，使用npm install --production命令，这样生成的node_modules文件夹中就不会有安装开发依赖**。
+- **使用npm install 第三方模块名 --save-dev**命令将模块添加到package.json文件的devDependencies字段中。
+    ```
+    {
+        "devDependencies": {
+            "gulp": "^4.0.0"
+        }
+    }
+    ```
+
+##### 4.5 package-lock.json文件的作用
+- **问题2的解决**：锁定模块的版本，确保再次下载时不会由于模块版本的不同而产生问题。
+- 加快下载速度，因为该文件中已经记录了项目所依赖的第三方模块的树状结构和下载地址，重新安装时只需要下载即可，不需要做额外的工作。
+
+#### 5.Node.js中模块的加载机制
+
+##### 5.1 模块查找规则——当模块拥有路径，但没有后缀时
+- (1).require()方法根据模块路径查找模块，如果是完整路径，直接引入模块。
+    ```javascript
+    require('./find.js');
+    require('./find');
+    ```
+- (2).require()方法根据模块路径查找模块，如果是模块名后缀被省略。
+    - a.如果模块后缀被省略，先在当前文件夹下找同名find.js文件，再找同名find文件夹。
+    - b.如果找到了同名find文件夹，找文件夹中的index.js。
+    - c.如果文件夹中没有index.js，就会去当前文件夹中的package.json文件中查找main选项中的入口文件。
+    - d.如果要找的指定入口文件不存在或者没有指定入口文件就会报错，模块没有被找到。
+
+##### 5.2 模块查找规则——当模块没有路径且没有后缀名时
+- Node.js会假设它是系统模块。
+    - a.如果有该模块就会去执行它；
+    - b.如果没有就会去node_modules文件夹中去查找：首先，看是否有该名字的JS同名find文件。
+    - c.如果没有JS同名find文件，再去看是否有该名字的同名find文件夹。如果文件夹中有index.js文件，则会执行index.js中的内容。
+    - d.如果没有index.js文件，查看该文件夹中的package.json文件中的main选项确定模块入口文件。如果有该入口文件就执行它，否则就报错。
+    ```javascript
+    require('find')
+    ```
+
+#### 6.资料下载
+- [笔记及代码，欢迎 star,follow,fork......](https://github.com/cdlwhm1217096231/HTML_CSS_JavaScript/tree/master/JavaScript)
