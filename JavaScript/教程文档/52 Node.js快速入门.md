@@ -1,4 +1,4 @@
-﻿### 技术交流QQ群:1027579432，欢迎你的加入！
+### 技术交流QQ群:1027579432，欢迎你的加入！
 ### 欢迎关注我的微信公众号：CurryCoder的程序人生
 
 #### 1.Node开发概述
@@ -75,6 +75,27 @@
     123
     ```
 
+##### 3.3 Nods.js中的全局对象global
+- 在浏览器中全局对象是window，在Node中全局对象是global。
+- Node中全局对象有以下方法，可以在任何地方使用，global可以省略。
+    - console.log():在控制台中输出
+    - setTimeout():设置超时定时器
+    - clearTimeOut():清除超时定时器
+    - setInterval():设置间歇定时器
+    - clearInterval():清除间歇定时器
+    ```javascript
+    // global.console.log('我是global对象下面的console.log()方法输出的内容');
+
+    // global.setTimeout(() => {
+    //     console.log('123');
+    // }, 2000);
+
+    console.log('我是global对象下面的console.log()方法输出的内容');
+
+    setTimeout(() => {
+        console.log('123');
+    }, 2000);
+    ```
 #### 4.Node.js模块化开发
 
 ##### 4.1 JavaScript开发弊端
@@ -99,7 +120,6 @@
     // 利用exports对象向模块外部导出数据
     exports.version = version;
     exports.sayHi = sayHi;
-
 
     // b.js
 
