@@ -448,4 +448,93 @@
 ##### 4.6 动态资源
 - **相同的请求地址，不同的响应资源。这种资源就是动态资源**。例如:https://blog.csdn.net/cdlwhm1217096231/article/details/106380489和https://blog.csdn.net/cdlwhm1217096231/article/details/106684950就是两篇不同的博客地址
 
+#### 5.Node.js异步编程
 
+##### 5.1 同步API、异步API
+- 同步API：只有当前API执行完成后，才能继续执行下一个API。
+    ```javascript
+    console.log('before);
+    console.log('after');
+    ```
+- 异步API：当前API的执行**不会阻塞**后续代码的执行。
+    ```javascript
+    console.log('before);
+    <!-- 异步API -->
+    setTimeout(() => {
+        console.log('last');
+    }, 2000);
+    console.log('after');
+
+    //  结果
+    before
+    after
+    last
+    ```
+
+##### 5.2 同步API与异步API的区别(获取返回值)
+- 区别：同步API可以从返回值中拿到API的执行结果，但是异步API是不可以的。
+    ```javascript
+    // 同步API与异步API对比
+
+    // 同步API
+    function sum(n1, n2) {
+        return n1 + n2;
+    }
+
+    const result = sum(10, 100);
+    console.log(result);  // 110
+
+
+    // 异步API
+    function getMsg() {
+        setTimeout(function () {
+            return {
+                msg: 'Hello, Node.js'
+            }
+        }, 2000);
+    }
+    const msg = getMsg();
+    console.log(msg);  // undefined
+    ```
+
+##### 5.3 通过回调函数返回异步API的结果
+- 回调函数：自己定义函数，让别人去调用。
+    ```javascript
+    function getData(callback) {
+    callback('123');
+    }
+
+    getData(n => {
+        console.log('callback函数被调用了');
+        console.log(n);
+    });
+    ```
+
+##### 5.4 同步API与异步API的区别(代码的执行顺序)
+- 同步API从上到下依次执行，前面的代码会阻塞后面代码的执行。
+- 异步API不会等待API执行完成后，再向下执行代码。
+    ```javascript
+    // 同步API
+    for (var i = 0; i < 100; i++){
+        console.log(i);
+    }
+
+    console.log('for循环后面的代码');
+
+    // 异步API
+    console.log('代码开始执行');
+    setTimeout(() => {
+        console.log('2s后执行的代码');
+        
+    }, 2000);
+
+    setTimeout(() => {
+        console.log('0s后执行的代码');
+    }, 0);
+
+    console.log('代码结束执行');
+    ```
+![同步API与异步API的区别(代码的执行顺序).png](https://upload-images.jianshu.io/upload_images/13407176-98afbbb43c86ec75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+#### 6.资料下载
+- [笔记及代码，欢迎 star,follow,fork......](https://github.com/cdlwhm1217096231/HTML_CSS_JavaScript/tree/master/JavaScript)
