@@ -1,0 +1,6 @@
+{"_id":{"$oid":"5c09f1e5aeb04b22f8460965"},"name":"张三","age":20,"hobbies":["足球","篮球","橄榄球"],"email":"zhangsan@itcast.cn","password":"123456"}
+{"_id":{"$oid":"5c09f236aeb04b22f8460967"},"name":"李四","age":10,"hobbies":["足球","篮球"],"email":"lisi@itcast.cn","password":"654321"}
+{"_id":{"$oid":"5c09f267aeb04b22f8460968"},"name":"王五","age":25,"hobbies":["敲代码"],"email":"wangwu@itcast.cn","password":"123456"}
+{"_id":{"$oid":"5c09f294aeb04b22f8460969"},"name":"赵六","age":50,"hobbies":["吃饭","睡觉","打豆豆"],"email":"zhaoliu@itcast.cn","password":"123456"}
+{"_id":{"$oid":"5c09f2b6aeb04b22f846096a"},"name":"王二麻子","age":32,"hobbies":["吃饭"],"email":"wangermazi@itcast.cn","password":"123456"}
+{"_id":{"$oid":"5c09f2d9aeb04b22f846096b"},"name":"狗蛋","age":14,"hobbies":["打豆豆"],"email":"goudan@163.com","password":"123456"}
